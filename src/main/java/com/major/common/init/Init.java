@@ -5,7 +5,8 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 /**
- * @author Administrator
+ * @author lurongzhi
+ * 用于网站刚开始时启动初始化的服务
  */
 public class Init implements ApplicationListener<ContextRefreshedEvent> {
     private static ApplicationContext applicationContext;
