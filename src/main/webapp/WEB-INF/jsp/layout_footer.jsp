@@ -3,7 +3,7 @@
 <%@ page isELIgnored="false" %>
 <div class="layout-footer">
     <div class="footer">
-        <div style="background-color:#383d61" class="footer--bg"></div>
+        <div style="background-color:#0a776e" class="footer--bg"></div>
         <div class="footer--inner">
             <div class="container">
                 <div class="footer_main">

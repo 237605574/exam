@@ -1,0 +1,226 @@
+{
+    "code": 0,
+    "data": [
+        {
+            "school": {
+                "name": "中山大学",
+                "id": 1,
+                "schoolRank": 1,
+                "schoolPici": "重点985",
+                "schoolType": "文理类",
+                "schoolAddress": "广东广州",
+                "scoreRankList": [
+                    {
+                        "maxRank": 600,
+                        "minRank": 500,
+                        "avgRank": 550,
+                        "maxScore": 5000,
+                        "minScore": 6000,
+                        "avgScore": 5500,
+                        "year": 2017
+                    },
+                    {
+                        "maxRank": 600,
+                        "minRank": 500,
+                        "avgRank": 550,
+                        "maxScore": 5001,
+                        "minScore": 6001,
+                        "avgScore": 5002,
+                        "year": 2016
+                    }
+                ]
+            },
+            "majorList": [
+                {
+                    "name": "计算机",
+                    "majorId": 1,
+                    "schoolId": 1,
+                    "province": "广东",
+                    "studentType": 0,
+                    "maxRank": 6000,
+                    "highRank": 5500,
+                    "middleRank": 5000,
+                    "lowRank": 4000,
+                    "maxScore": 600,
+                    "highScore": 610,
+                    "middleScore": 620,
+                    "lowScore": 630,
+                    "scoreRankList": [
+                        {
+                            "maxRank": 5000,
+                            "minRank": 6000,
+                            "avgRank": 5500,
+                            "maxScore": 600,
+                            "minScore": 500,
+                            "avgScore": 550,
+                            "year": 2017
+                        },
+                        {
+                            "maxRank": 5001,
+                            "minRank": 6001,
+                            "avgRank": 5002,
+                            "maxScore": 600,
+                            "minScore": 500,
+                            "avgScore": 550,
+                            "year": 2016
+                        }
+                    ],
+                    "riskLevel": 2
+                },
+                {
+                    "name": "传播与设计",
+                    "majorId": 2,
+                    "schoolId": 1,
+                    "province": "广东",
+                    "studentType": 0,
+                    "maxRank": 6500,
+                    "highRank": 6000,
+                    "middleRank": 5500,
+                    "lowRank": 5000,
+                    "maxScore": 550,
+                    "highScore": 600,
+                    "middleScore": 610,
+                    "lowScore": 620,
+                    "scoreRankList": [
+                        {
+                            "maxRank": 5000,
+                            "minRank": 6000,
+                            "avgRank": 5500,
+                            "maxScore": 600,
+                            "minScore": 500,
+                            "avgScore": 550,
+                            "year": 2017
+                        },
+                        {
+                            "maxRank": 5001,
+                            "minRank": 6001,
+                            "avgRank": 5002,
+                            "maxScore": 600,
+                            "minScore": 500,
+                            "avgScore": 550,
+                            "year": 2016
+                        }
+                    ],
+                    "riskLevel": 3
+                }
+            ]
+        },
+        {
+            "school": {
+                "name": "广大",
+                "id": 3,
+                "schoolRank": 1,
+                "schoolPici": "垃圾学校",
+                "schoolType": "文理类",
+                "schoolAddress": "广东广州",
+                "scoreRankList": [
+                    {
+                        "maxRank": 600,
+                        "minRank": 500,
+                        "avgRank": 550,
+                        "maxScore": 5000,
+                        "minScore": 6000,
+                        "avgScore": 5500,
+                        "year": 2018
+                    },
+                    {
+                        "maxRank": 600,
+                        "minRank": 500,
+                        "avgRank": 550,
+                        "maxScore": 5001,
+                        "minScore": 6001,
+                        "avgScore": 5002,
+                        "year": 2015
+                    }
+                ]
+            },
+            "majorList": [
+                {
+                    "name": "计算机",
+                    "majorId": 4,
+                    "schoolId": 3,
+                    "province": "广东",
+                    "studentType": 0,
+                    "maxRank": 6000,
+                    "highRank": 5500,
+                    "middleRank": 5000,
+                    "lowRank": 4000,
+                    "maxScore": 600,
+                    "highScore": 610,
+                    "middleScore": 620,
+                    "lowScore": 630,
+                    "scoreRankList": [],
+                    "riskLevel": 2
+                }
+            ]
+        },
+        {
+            "school": {
+                "name": "华工",
+                "id": 2,
+                "schoolRank": 1,
+                "schoolPici": "重点985",
+                "schoolType": "工科",
+                "schoolAddress": "广东广州",
+                "scoreRankList": [
+                    {
+                        "maxRank": 600,
+                        "minRank": 500,
+                        "avgRank": 550,
+                        "maxScore": 5000,
+                        "minScore": 6000,
+                        "avgScore": 5500,
+                        "year": 2017
+                    },
+                    {
+                        "maxRank": 600,
+                        "minRank": 500,
+                        "avgRank": 550,
+                        "maxScore": 5001,
+                        "minScore": 6001,
+                        "avgScore": 5002,
+                        "year": 2016
+                    }
+                ]
+            },
+            "majorList": [
+                {
+                    "name": "传播与设计",
+                    "majorId": 3,
+                    "schoolId": 2,
+                    "province": "广东",
+                    "studentType": 0,
+                    "maxRank": 6000,
+                    "highRank": 5500,
+                    "middleRank": 5000,
+                    "lowRank": 4000,
+                    "maxScore": 600,
+                    "highScore": 610,
+                    "middleScore": 620,
+                    "lowScore": 630,
+                    "scoreRankList": [
+                        {
+                            "maxRank": 5000,
+                            "minRank": 6000,
+                            "avgRank": 5500,
+                            "maxScore": 600,
+                            "minScore": 500,
+                            "avgScore": 550,
+                            "year": 2018
+                        },
+                        {
+                            "maxRank": 5001,
+                            "minRank": 6001,
+                            "avgRank": 5002,
+                            "maxScore": 600,
+                            "minScore": 500,
+                            "avgScore": 550,
+                            "year": 2015
+                        }
+                    ],
+                    "riskLevel": 2
+                }
+            ]
+        }
+    ]
+}

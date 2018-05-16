@@ -1,5 +1,6 @@
 package com.major.common.init;
 
+import com.major.common.idgenerator.IdMgr;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -16,7 +17,10 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
     @Override
     public void onApplicationEvent(ContextRefreshedEvent cre) {
         if (cre.getApplicationContext().getParent() == null) {
+            applicationContext = cre.getApplicationContext();
             //  在这里进行初始化操作
+            //  初始化id
+            IdMgr.getInstance().init();
         }
     }
 

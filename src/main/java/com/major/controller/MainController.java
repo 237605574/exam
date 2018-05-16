@@ -13,14 +13,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     public String home() {
-        return "mbti_test";
+        return "test";
     }
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String index() {
         return "index";
     }
-    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
         return "login";
+    }
+    @RequestMapping(value = "/mbti_test", method = RequestMethod.GET)
+    public String mbtiTest() {
+        return "mbti_test";
+    }
+    @RequestMapping(value = "/recommend", method = RequestMethod.GET)
+    public String recommend() {
+        return "recommend";
     }
 }

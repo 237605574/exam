@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指定我们的到具体的bean -->
+<mapper namespace="com.major.dao.SchoolDao">
+    <!-- 更新用户信息 -->
+    <resultMap id="SchoolObj" type="com.major.entity.SchoolObj">
+        <!--
+      字标签属性:id 表示属性
+      column：数据库查询的列的字段，property：自定义数据类型的变量的名字
+      -->
+        <result column="school_id" property="id"/>
+        <result column="school_name" property="name"/>
+        <result column="school_address" property="schoolAddress"/>
+        <result column="school_type" property="schoolType"/>
+        <result column="school_rank" property="schoolRank"/>
+        <result column="school_pici" property="schoolPici"/>
+    </resultMap>
+    <select id="getSchoolByMajor" resultMap="SchoolObj">
+        SELECT
+        *
+        FROM
+        `school_info`
+        WHERE
+        #{majorObj.schoolId} = `school_id`
+    </select>
+</mapper>

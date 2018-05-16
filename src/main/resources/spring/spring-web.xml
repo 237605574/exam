@@ -25,6 +25,7 @@
     <mvc:resources mapping="/view/**" location="/static/view/" />
     <mvc:resources mapping="/fonts/**" location="/static/fonts/" />
     <mvc:resources mapping="/less/**" location="/static/less/" />
+    <mvc:resources mapping="/js/**" location="/static/js/" />
     <mvc:default-servlet-handler/>
     <!-- 访问拦截  -->
     <!--<mvc:interceptors>-->

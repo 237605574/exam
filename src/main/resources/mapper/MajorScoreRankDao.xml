@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指定我们的到具体的bean -->
+<mapper namespace="com.major.dao.MajorScoreRankDao">
+    <!-- 更新用户信息 -->
+    <resultMap id="ScoreRankObj" type="com.major.entity.ScoreRankObj">
+        <!--
+      字标签属性:id 表示属性
+      column：数据库查询的列的字段，property：自定义数据类型的变量的名字
+      -->
+        <result column="year" property="year"/>
+        <result column="min_rank" property="minRank"/>
+        <result column="avg_rank" property="avgRank"/>
+        <result column="max_rank" property="maxRank"/>
+        <result column="min_score" property="minScore"/>
+        <result column="avg_score" property="avgScore"/>
+        <result column="max_score" property="maxScore"/>
+    </resultMap>
+    <select id="getScoreRankList" resultMap="ScoreRankObj">
+        SELECT
+        *
+        FROM
+        `major_score_rank`
+        WHERE
+        `major_id` = #{majorObj.majorId} AND
+        `province` = #{majorObj.province} AND
+        `student_type` = #{majorObj.studentType}
+    </select>
+</mapper>
