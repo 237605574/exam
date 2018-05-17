@@ -32,8 +32,8 @@
                     </div>
                     <div class="am-u-md-9">
                         <div class="topbar-right am-text-right am-fr">
-                            <a href="<%=request.getContextPath()%>/gaokao/login">登录</a>
-                            <a href="<%=request.getContextPath()%>/gaokao/register">注册</a>
+                            <a  id="user_pos1" href="<%=request.getContextPath()%>/gaokao/login">登录</a>
+                            <a id="user_pos2"  href="<%=request.getContextPath()%>/gaokao/register">注册</a>
                         </div>
                     </div>
                 </div>
@@ -94,12 +94,12 @@
     <div class="header-box" data-am-sticky="{top:40}">
         <div class="nav-contain">
             <div class="nav-inner">
-                <ul class="am-nav am-nav-pills am-nav-justify">
+                <ul class="am-nav am-nav-pills am-nav-justify" style="line-height:0.5">
                     <li class=""><a href="#">公司介绍</a></li>
                     <li>
                         <a href="#">高考服务</a>
                         <!-- sub-menu start-->
-                        <ul class="sub-menu">
+                        <ul class="sub-menu" style="line-height:1.6">
                             <li class="menu-item"><a href="<%=request.getContextPath()%>/gaokao/recommend">专业推荐</a></li>
                             <li class="menu-item"><a href="<%=request.getContextPath()%>/gaokao/mbti_test">性格测试</a></li>
                         </ul>
@@ -157,8 +157,8 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class=""><a href="<%=request.getContextPath()%>/gaokao/login" class="">登录</a></li>
-                                <li class=""><a href="<%=request.getContextPath()%>/gaokao/register" class="">注册</a></li>
+                                <li class=""><a id ="m_user_pos1" href="<%=request.getContextPath()%>/gaokao/login" class="">登录</a></li>
+                                <li class=""><a id ="m_user_pos2" href="<%=request.getContextPath()%>/gaokao/register" class="">注册</a></li>
                             </ul>
 
                         </div>

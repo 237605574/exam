@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-05-16 23:12:14
+Date: 2018-05-17 19:59:07
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `id_generator` (
 -- ----------------------------
 -- Records of id_generator
 -- ----------------------------
-INSERT INTO `id_generator` VALUES ('user', '1000', '29000');
+INSERT INTO `id_generator` VALUES ('user', '1000', '52000');
 
 -- ----------------------------
 -- Table structure for major_info
@@ -102,15 +102,16 @@ CREATE TABLE `school_info` (
   `school_address` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   `school_type` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '如理工类等等',
   `school_pici` varchar(255) CHARACTER SET utf8 DEFAULT NULL COMMENT '学校批次，本科一批，二批',
+  `school_province` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
   PRIMARY KEY (`school_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of school_info
 -- ----------------------------
-INSERT INTO `school_info` VALUES ('1', '中山大学', '1', '广东广州', '文理类', '重点985');
-INSERT INTO `school_info` VALUES ('2', '华工', '1', '广东广州', '工科', '重点985');
-INSERT INTO `school_info` VALUES ('3', '广大', '1', '广东广州', '文理类', '垃圾学校');
+INSERT INTO `school_info` VALUES ('1', '中山大学', '1', '广东广州', '文理类', '重点985', '广东');
+INSERT INTO `school_info` VALUES ('2', '华工', '1', '广东广州', '工科', '重点985', '北京');
+INSERT INTO `school_info` VALUES ('3', '广大', '1', '广东广州', '文理类', '垃圾学校', '安徽');
 
 -- ----------------------------
 -- Table structure for school_major
@@ -163,12 +164,15 @@ DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `user_name` varchar(255) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  `authority` smallint(6) DEFAULT NULL,
+  `authority` smallint(6) DEFAULT '0',
   `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `名字唯一` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('123', '123456', '0', '1');
+INSERT INTO `user` VALUES ('lvmy', '123456', '0', '2');
 SET FOREIGN_KEY_CHECKS=1;

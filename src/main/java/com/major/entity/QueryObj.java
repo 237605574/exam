@@ -13,6 +13,15 @@ public class QueryObj {
     private String keyWord; //  专业关键词
     private Integer riskLevel; // 0:全部；1:风险低；2:中；3:高
     private Integer offset = 0;
+    private String schoolProvince;
+
+    public String getSchoolProvince() {
+        return schoolProvince;
+    }
+
+    public void setSchoolProvince(String schoolProvince) {
+        this.schoolProvince = schoolProvince;
+    }
 
     public boolean checkRank() {
         return (rank != null) && checkOther();

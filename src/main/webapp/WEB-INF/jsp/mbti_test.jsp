@@ -31,9 +31,7 @@
 <script src="/js/jquery-2.1.0.js" charset="utf-8"></script>
 <script src="/js/amazeui.js" charset="utf-8"></script>
 <script src="/js/common.js" charset="utf-8"></script>
-<script>
-
-</script>
+<jsp:include page="checkLogin.jsp"></jsp:include>
 </body>
 
 </html>

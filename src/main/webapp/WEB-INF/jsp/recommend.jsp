@@ -86,8 +86,37 @@
                                             <div class="am-u-sm-9">
                                                 <select id="rank_province" data-am-selected="{searchBox: 1}"
                                                         style="display: none;">
-                                                    <option value="广东">广东</option>
+                                                    <option value="安徽">安徽</option>
                                                     <option value="北京">北京</option>
+                                                    <option value="重庆">重庆</option>
+                                                    <option value="福建">福建</option>
+                                                    <option value="广东">广东</option>
+                                                    <option value="广西">广西</option>
+                                                    <option value="甘肃">甘肃</option>
+                                                    <option value="贵州">贵州</option>
+                                                    <option value="河北">河北</option>
+                                                    <option value="河南">河南</option>
+                                                    <option value="湖南">湖南</option>
+                                                    <option value="湖北">湖北</option>
+                                                    <option value="海南">海南</option>
+                                                    <option value="黑龙江">黑龙江</option>
+                                                    <option value="吉林">吉林</option>
+                                                    <option value="江苏">江苏</option>
+                                                    <option value="江西">江西</option>
+                                                    <option value="辽宁">辽宁</option>
+                                                    <option value="内蒙古">内蒙古</option>
+                                                    <option value="宁夏">宁夏</option>
+                                                    <option value="青海">青海</option>
+                                                    <option value="上海">上海</option>
+                                                    <option value="四川">四川</option>
+                                                    <option value="山西">山西</option>
+                                                    <option value="山东">山东</option>
+                                                    <option value="陕西">陕西</option>
+                                                    <option value="天津">天津</option>
+                                                    <option value="新疆">新疆</option>
+                                                    <option value="西藏">西藏</option>
+                                                    <option value="云南">云南</option>
+                                                    <option value="浙江">浙江</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -99,6 +128,48 @@
                                                     <option value="1">风险大</option>
                                                     <option value="2">风险中</option>
                                                     <option value="3">风险小</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group">
+                                            <label for="rank_schoolProvince" class="am-u-sm-3 am-form-label">
+                                                学校省份
+                                            </label>
+                                            <div class="am-u-sm-9">
+                                                <select id="rank_schoolProvince" data-am-selected="{searchBox: 1}"
+                                                        style="display: none;">
+                                                    <option value="全部">全部</option>
+                                                    <option value="安徽">安徽</option>
+                                                    <option value="北京">北京</option>
+                                                    <option value="重庆">重庆</option>
+                                                    <option value="福建">福建</option>
+                                                    <option value="广东">广东</option>
+                                                    <option value="广西">广西</option>
+                                                    <option value="甘肃">甘肃</option>
+                                                    <option value="贵州">贵州</option>
+                                                    <option value="河北">河北</option>
+                                                    <option value="河南">河南</option>
+                                                    <option value="湖南">湖南</option>
+                                                    <option value="湖北">湖北</option>
+                                                    <option value="海南">海南</option>
+                                                    <option value="黑龙江">黑龙江</option>
+                                                    <option value="吉林">吉林</option>
+                                                    <option value="江苏">江苏</option>
+                                                    <option value="江西">江西</option>
+                                                    <option value="辽宁">辽宁</option>
+                                                    <option value="内蒙古">内蒙古</option>
+                                                    <option value="宁夏">宁夏</option>
+                                                    <option value="青海">青海</option>
+                                                    <option value="上海">上海</option>
+                                                    <option value="四川">四川</option>
+                                                    <option value="山西">山西</option>
+                                                    <option value="山东">山东</option>
+                                                    <option value="陕西">陕西</option>
+                                                    <option value="天津">天津</option>
+                                                    <option value="新疆">新疆</option>
+                                                    <option value="西藏">西藏</option>
+                                                    <option value="云南">云南</option>
+                                                    <option value="浙江">浙江</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -168,9 +239,9 @@
                                     <ul data-am-widget="pagination" class="am-pagination am-pagination-default"
                                         style="margin: 0 0 0 auto;width: 350px">
                                         <li class="am-pagination-prev ">
-                                            <a href="javascript:void(0);" onclick="rankPerPage()" class="">上一页</a>
+                                            <a href="javascript:void(0);" onclick="rankPrePage()" class="">上一页</a>
                                         </li>
-                                        <input id="rank_page" value="1"
+                                        <input id="rank_page" value="0"
                                                style="width: 20px; border:none;text-decoration: underline"/>
                                         <li class="am-pagination-next ">
                                             <a href="javascript:void(0);" onclick="rankNextPage()" class="">下一页</a>
@@ -187,19 +258,199 @@
                     <%--输入分数预测--%>
                     <div data-tab-panel-1 class="am-tab-panel ">
                         <div class="index-banner">
-                            <div class="index-mask">
-                                <div class="container">
-                                    <div class="am-g">
-                                        <div class="am-u-md-10 am-u-sm-centered">
-                                            <h1 class="slide_simple--title">企业移动化，首选云适配</h1>
-                                            <p class="slide_simple--text am-text-left">
-                                                全球领先的HTML5企业移动化解决方案供应商，安全高效的帮助您的企业移动化。云适配企业浏览器Enterploer,让企业安全迈进移动办公时代！
-                                            </p>
-                                            <div class="slide_simple--buttons">
-                                                <button type="button" class="am-btn am-btn-danger">了解更多</button>
+                            <div class="widget am-cf">
+                                <form class="am-form tpl-form-line-form">
+                                    <div class="am-u-md-9 am-u-sm-centered">
+                                        <div class="am-form-group">
+                                            <label class="am-u-sm-3 am-form-label">高考分数 </label>
+                                            <div class="am-u-sm-9">
+                                                <input type="text" placeholder="输入高考分数"
+                                                       style="min-width:200px;width:50%" id="score">
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group">
+                                            <label for="score_studentType" class="am-u-sm-3 am-form-label">
+                                                文理科
+                                            </label>
+                                            <div class="am-u-sm-9">
+                                                <select id="score_studentType" data-am-selected
+                                                        style="display: none;">
+                                                    <option value="0">理科</option>
+                                                    <option value="1">文科</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group">
+                                            <label for="score_province" class="am-u-sm-3 am-form-label">
+                                                省份
+                                            </label>
+                                            <div class="am-u-sm-9">
+                                                <select id="score_province" data-am-selected="{searchBox: 1}"
+                                                        style="display: none;">
+                                                    <option value="安徽">安徽</option>
+                                                    <option value="北京">北京</option>
+                                                    <option value="重庆">重庆</option>
+                                                    <option value="福建">福建</option>
+                                                    <option value="广东">广东</option>
+                                                    <option value="广西">广西</option>
+                                                    <option value="甘肃">甘肃</option>
+                                                    <option value="贵州">贵州</option>
+                                                    <option value="河北">河北</option>
+                                                    <option value="河南">河南</option>
+                                                    <option value="湖南">湖南</option>
+                                                    <option value="湖北">湖北</option>
+                                                    <option value="海南">海南</option>
+                                                    <option value="黑龙江">黑龙江</option>
+                                                    <option value="吉林">吉林</option>
+                                                    <option value="江苏">江苏</option>
+                                                    <option value="江西">江西</option>
+                                                    <option value="辽宁">辽宁</option>
+                                                    <option value="内蒙古">内蒙古</option>
+                                                    <option value="宁夏">宁夏</option>
+                                                    <option value="青海">青海</option>
+                                                    <option value="上海">上海</option>
+                                                    <option value="四川">四川</option>
+                                                    <option value="山西">山西</option>
+                                                    <option value="山东">山东</option>
+                                                    <option value="陕西">陕西</option>
+                                                    <option value="天津">天津</option>
+                                                    <option value="新疆">新疆</option>
+                                                    <option value="西藏">西藏</option>
+                                                    <option value="云南">云南</option>
+                                                    <option value="浙江">浙江</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group">
+                                            <label for="score_risk" class="am-u-sm-3 am-form-label"> 风险范围 </label>
+                                            <div class="am-u-sm-9">
+                                                <select id="score_risk" data-am-selected style="display: none;">
+                                                    <option value="0">全部</option>
+                                                    <option value="1">风险大</option>
+                                                    <option value="2">风险中</option>
+                                                    <option value="3">风险小</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group">
+                                            <label for="score_schoolProvince" class="am-u-sm-3 am-form-label">
+                                                学校省份
+                                            </label>
+                                            <div class="am-u-sm-9">
+                                                <select id="score_schoolProvince" data-am-selected="{searchBox: 1}"
+                                                        style="display: none;">
+                                                    <option value="全部">全部</option>
+                                                    <option value="安徽">安徽</option>
+                                                    <option value="北京">北京</option>
+                                                    <option value="重庆">重庆</option>
+                                                    <option value="福建">福建</option>
+                                                    <option value="广东">广东</option>
+                                                    <option value="广西">广西</option>
+                                                    <option value="甘肃">甘肃</option>
+                                                    <option value="贵州">贵州</option>
+                                                    <option value="河北">河北</option>
+                                                    <option value="河南">河南</option>
+                                                    <option value="湖南">湖南</option>
+                                                    <option value="湖北">湖北</option>
+                                                    <option value="海南">海南</option>
+                                                    <option value="黑龙江">黑龙江</option>
+                                                    <option value="吉林">吉林</option>
+                                                    <option value="江苏">江苏</option>
+                                                    <option value="江西">江西</option>
+                                                    <option value="辽宁">辽宁</option>
+                                                    <option value="内蒙古">内蒙古</option>
+                                                    <option value="宁夏">宁夏</option>
+                                                    <option value="青海">青海</option>
+                                                    <option value="上海">上海</option>
+                                                    <option value="四川">四川</option>
+                                                    <option value="山西">山西</option>
+                                                    <option value="山东">山东</option>
+                                                    <option value="陕西">陕西</option>
+                                                    <option value="天津">天津</option>
+                                                    <option value="新疆">新疆</option>
+                                                    <option value="西藏">西藏</option>
+                                                    <option value="云南">云南</option>
+                                                    <option value="浙江">浙江</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group">
+                                            <label for="score_keyWord" class="am-u-sm-3 am-form-label">专业关键字 </label>
+                                            <div class="am-u-sm-9">
+                                                <input type="text" class="tpl-form-input" id="score_keyWord"
+                                                       placeholder="请输入专业关键字" style="min-width:200px;width:50%">
+                                                <small style="text-align:start">非必选输入</small>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="am-form-group">
+                                            <div class="am-u-sm-9 am-u-sm-push-3">
+                                                <button type="button"
+                                                        class="am-btn am-btn-primary tpl-btn-bg-color-success "
+                                                        style="max-width:200px;width:80%" onclick="scoreQueryClick()">
+                                                    查询推荐专业
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="am-form-group" id="mobile-tips-score" style="display:none">
+                                            <div class="am-u-sm-9 am-u-sm-push-3  am-u-sm-centered"
+                                                 style="font-size:1rem;text-decoration:underline">
+                                                <<*向左滑动进行分数推荐
                                             </div>
                                         </div>
                                     </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="am-u-md-9 am-u-sm-centered" id="score_result_container">
+                            <div class="card-box">
+                                <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
+                                <div class="am-scrollable-horizontal">
+                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover">
+                                        <thead style="text-align: center">
+                                        <tr>
+                                            <th colspan="3" rowspan="2">学校/专业</th>
+                                            <th colspan="3">2015</th>
+                                            <th colspan="3">2016</th>
+                                            <th colspan="3">2017</th>
+                                            <th>风险</th>
+                                        </tr>
+                                        <th>最高</th>
+                                        <th>最低</th>
+                                        <th>平均</th>
+                                        <th>最高</th>
+                                        <th>最低</th>
+                                        <th>平均</th>
+                                        <th>最高</th>
+                                        <th>最低</th>
+                                        <th>平均</th>
+                                        <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="score_query_body">
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="am-u-sm-9 am-u-sm-push-3  am-u-sm-right"
+                                     style="font-size:1rem;text-decoration:underline;text-align: end">
+                                    *显示方式:分数/排名
+                                </div>
+                                <div class="am-scrollable-horizontal" style="margin: 0 auto;">
+                                    <ul data-am-widget="pagination" class="am-pagination am-pagination-default"
+                                        style="margin: 0 0 0 auto;width: 350px">
+                                        <li class="am-pagination-prev ">
+                                            <a href="javascript:void(0);" onclick="scorePrePage()" class="">上一页</a>
+                                        </li>
+                                        <input id="score_page" value="0"
+                                               style="width: 20px; border:none;text-decoration: underline"/>
+                                        <li class="am-pagination-next ">
+                                            <a href="javascript:void(0);" onclick="scoreNextPage()" class="">下一页</a>
+                                        </li>
+                                        <li class="am-pagination-last ">
+                                            <a href="javascript:void(0);" onclick="scoreQueryByNum()" class="">跳转</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -214,29 +465,23 @@
 </div>
 
 
-</div>
-<div class="am-modal am-modal-prompt" tabindex="-1" id="msg-alert">
-    <div class="am-modal-dialog">
-        <div class="am-modal-hd" id="msg-head"></div>
-        <div class="am-modal-bd" id="msg-body">
-        </div>
-        <div class="am-modal-footer">
-            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
-        </div>
-    </div>
-</div>
+<jsp:include page="msg_alert.jsp"></jsp:include>
 <!--===========layout-footer================-->
 <jsp:include page="layout_footer.jsp"></jsp:include>
 <script src="/js/jquery-2.1.0.js" charset="utf-8"></script>
 <script src="/js/amazeui.js" charset="utf-8"></script>
 <script src="/js/common.js" charset="utf-8"></script>
 <script src="/js/jquery.tips.js" charset="utf-8"></script>
+<script src="/js/alert.js" charset="utf-8"></script>
 <script>
+    var hasRankQuery = false;
+    var hasScoreQuery = false;
     //  是否查询到结尾了
-    var isPageEnd = false;
+    var isRankPageEnd = true;
+    var isScorePageEnd = true;
     //  用户是否登录
     var isLogin = false;
-    var limited = 30;
+    var limit = 30;
     var isMobile = false;
     var rank_keyWord;
     var rank_province;
@@ -244,12 +489,14 @@
     var rank;
     var rank_risk;
     var rank_offset;
+    var rank_schoolProvince;
     var score_keyWord;
     var score_province;
     var score;
     var score_risk;
     var score_studentType;
     var score_offset;
+    var score_schoolProvince;
 
     function browserRedirect() {
         var sUserAgent = navigator.userAgent.toLowerCase();
@@ -265,15 +512,43 @@
         if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
             isMobile = true;
             $("#mobile-tips-rank").css("display", "block");
+            $("#mobile-tips-score").css("display", "block");
         }
     }
 
     browserRedirect();
 
-    function alertErrorCode(result) {
-        msg = "错误码：" + result.code + "；msg: "
-        result.msg;
-        alertErrorMsg(msg);
+    function sendRankQuery() {
+        var recommendData = {
+            province: rank_province,
+            studentType: rank_studentType,
+            rank: rank,
+            keyWord: rank_keyWord,
+            riskLevel: rank_risk,
+            offset: rank_offset,
+            schoolProvince:rank_schoolProvince,
+        };
+        hasRankQuery = true;
+        $.ajax({
+            type: "POST",
+            url: '<%=request.getContextPath()%>/recommendAction/rankRecommend',
+            data: recommendData,
+            dataType: 'json',
+            cache: false,
+            success: function (result) {
+                // 查询正确
+                if (result.code === 0) {
+                    var tableParentNode = $("#rank_query_body");
+                    showData(tableParentNode, result.data, isRankPageEnd);
+                } else {
+                    alertErrorMsg(result.msg);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                ajaxErrorAlert(XMLHttpRequest, textStatus, errorThrown);
+            }
+
+        });
     }
 
     function rankQueryClick() {
@@ -287,39 +562,14 @@
         rank_studentType = $("#rank_studentType").val();
         rank_province = $("#rank_province").val();
         rank_risk = $("#rank_risk").val();
+        rank_schoolProvince = $("#rank_schoolProvince").val();
+        rank_offset = 0;
         // 发送请求
-        var recommendData = {
-            province: rank_province,
-            studentType: rank_studentType,
-            rank: rank,
-            keyWord: rank_keyWord,
-            riskLevel: rank_risk,
-            offset: rank_offset,
-    }
-        ;
-        $.ajax({
-            type: "POST",
-            url: '<%=request.getContextPath()%>/recommendAction/rankRecommend',
-            data: recommendData,
-            dataType: 'json',
-            cache: false,
-            success: function (result) {
-                // 查询正确
-                if (result.code === 0) {
-                    rankShowData(result.data);
-                } else {
-                    alertErrorMsg(result.msg);
-                }
-            },
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                ajaxErrorAlert(XMLHttpRequest, textStatus, errorThrown);
-            }
-
-        });
+        sendRankQuery();
     }
 
-    function rankShowData(recommendDatas) {
-        var tableParentNode = $("#rank_query_body");
+    function showData(tableParentNode, recommendDatas, isPageEnd) {
+        // var tableParentNode = $("#rank_query_body");
         // 删除所有子节点
         tableParentNode.children().remove();
         //  动态插入数据
@@ -330,7 +580,7 @@
             var trSchoolNode = $("<tr class='am-primary'></tr>");
             var schoolData = recommendData.school;
             var schoolInfoStr = schoolData.name + "  " + schoolData.schoolPici + "  " + schoolData.schoolAddress;
-            var schoolInfo = $("<td colspan = '3'></td>");
+            var schoolInfo = $("<td colspan = '3' style='text-align: start'></td>");
             schoolInfo.html(schoolInfoStr);
             trSchoolNode.append(schoolInfo);
             //  历年最高分
@@ -374,7 +624,7 @@
             for (var iii = 0; iii < majorList.length; iii++) {
                 majorNum++;
                 var majorData = majorList[iii];
-                var tdName = $("<td colspan='2'></td>");
+                var tdName = $("<td colspan='2' style='text-align: start'></td>");
                 var trMajorNode = $("<tr></tr>");
                 trMajorNode.append($("<td></td>"));
                 tdName.html(majorData.name);
@@ -477,59 +727,225 @@
         return true;
     }
 
-    function ajaxErrorAlert(XMLHttpRequest, textStatus, errorThrown) {
-        var msg = "状态码:" + XMLHttpRequest.status + "\n"
-            + "ready state:" + XMLHttpRequest.readyState + "\n"
-            + "text status:" + textStatus + "\n"
-            + "error thrown" + errorThrown;
-        alertErrorMsg(msg);
-    }
-
-    function alertMsg(msgHead, msgBody) {
-        $("#msg-body").text(msgBody);
-        $("#msg-head").text(msgHead);
-        $("#msg-alert").modal({
-            relatedTarget: this,
-            onConfirm: function () {
-
-            }
-        });
-    }
-
-    function alertErrorMsg(msg) {
-        alertMsg("发生错误", msg);
-    }
-
     function rankNextPage() {
         if (!isLogin) {
-            alertMsg("登录后使用完整功能");
+            alertMsg("", "登录后使用完整功能");
             return;
         }
-        if (isPageEnd) {
-            alertMsg("没有更多数据了")
+        if (isRankPageEnd) {
+            alertMsg("", "没有更多数据了")
             return;
         }
+        var page = $("#rank_page").val();
+        if (!hasRankQuery) {
+            return;
+        }
+        $("#rank_page").val(++page);
+        rank_offset += limit;
+        var tableParentNode = $("#rank_query_body");
+        // 删除所有子节点
+        tableParentNode.children().remove();
+        sendRankQuery();
     }
 
     function rankPrePage() {
         if (!isLogin) {
-            alertMsg("登录后使用完整功能");
+            alertMsg("", "登录后使用完整功能");
             return;
         }
         var curPage = $("#rank_page").val();
-        if(curPage<=1){
-            alertMsg("登录后使用完整功能");
+        if (curPage <= 1) {
             return;
         }
+        var page = $("#rank_page").val();
+        if (page <= 1) {
+            return
+        }
+        $("#rank_page").val(--page);
+        rank_offset -= limit;
+        var tableParentNode = $("#rank_query_body");
+        // 删除所有子节点
+        tableParentNode.children().remove();
+        sendRankQuery();
+
     }
 
     function rankQueryByNum() {
         if (!isLogin) {
-            alertMsg("登录后使用完整功能");
+            alertMsg("", "登录后使用完整功能");
             return;
         }
+        if (!hasRankQuery) {
+            return;
+        }
+        var curPage = $("#rank_page").val();
+        if (curPage <= 0) {
+            alertMsg("", "页码不正确");
+            return;
+        }
+        curPage--;
+        rank_offset = limit * curPage;
+        var tableParentNode = $("#rank_query_body");
+        // 删除所有子节点
+        tableParentNode.children().remove();
+        sendRankQuery();
+    }
+
+    function scoreQueryClick() {
+        if (!checkScore()) {
+            return;
+        }
+        //  重置页码
+        $("#score_page").val(1);
+        score = $("#score").val();
+        score_keyWord = $("#score_keyWord").val();
+        score_studentType = $("#score_studentType").val();
+        score_province = $("#score_province").val();
+        score_risk = $("#score_risk").val();
+        score_schoolProvince = $("#score_schoolProvince").val();
+        score_offset = 0;
+        // 发送请求
+        sendScoreQuery();
+    }
+
+    function checkScore() {
+        if ($("#score").val() == null || $("#score").val() == "") {
+            $("#score").tips({
+                side: 2,
+                msg: '值不能为空',
+                bg: '#ff293f',
+                time: 3
+            });
+            return false;
+        }
+        if ($("#score_studentType").val() == null || $("#score_studentType").val() == "") {
+            $("#score_studentType").tips({
+                side: 2,
+                msg: '值不能为空',
+                bg: '#ff293f',
+                time: 3
+            });
+            return false;
+        }
+        if ($("#score_province").val() == null || $("#score_province").val() == "") {
+            $("#score_province").tips({
+                side: 2,
+                msg: '值不能为空',
+                bg: '#ff293f',
+                time: 3
+            });
+            return false;
+        }
+        if ($("#score_risk").val() == null || $("#score_risk").val() == "") {
+            $("#score_risk").tips({
+                side: 2,
+                msg: '值不能为空',
+                bg: '#ff293f',
+                time: 3
+            });
+            return false;
+        }
+        return true;
+    }
+
+    function sendScoreQuery() {
+        var recommendData = {
+            province: score_province,
+            studentType: score_studentType,
+            score: score,
+            keyWord: score_keyWord,
+            riskLevel: score_risk,
+            offset: score_offset,
+            schoolProvince:score_schoolProvince,
+        };
+        hasScoreQuery = true;
+        $.ajax({
+            type: "POST",
+            url: '<%=request.getContextPath()%>/recommendAction/scoreRecommend',
+            data: recommendData,
+            dataType: 'json',
+            cache: false,
+            success: function (result) {
+                // 查询正确
+                if (result.code === 0) {
+                    var tableParentNode = $("#score_query_body");
+                    showData(tableParentNode, result.data, isScorePageEnd);
+                } else {
+                    alertErrorMsg(result.msg);
+                }
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                ajaxErrorAlert(XMLHttpRequest, textStatus, errorThrown);
+            }
+
+        });
+    }
+
+    function scoreNextPage() {
+        if (!isLogin) {
+            alertMsg("", "登录后使用完整功能");
+            return;
+        }
+        if (isRankPageEnd) {
+            alertMsg("", "没有更多数据了")
+            return;
+        }
+        var page = $("#score_page").val();
+        if (!hasScoreQuery) {
+            return;
+        }
+        $("#score_page").val(++page);
+        score_offset += limit;
+        var tableParentNode = $("#score_query_body");
+        // 删除所有子节点
+        tableParentNode.children().remove();
+        sendScoreQuery();
+    }
+
+    function scorePrePage() {
+        if (!isLogin) {
+            alertMsg("", "登录后使用完整功能");
+            return;
+        }
+        var curPage = $("#score_page").val();
+        if (curPage <= 1) {
+            return;
+        }
+        var page = $("#score_page").val();
+        if (page <= 1) {
+            return
+        }
+        $("#score_page").val(--page);
+        score_offset -= limit;
+        var tableParentNode = $("#score_query_body");
+        // 删除所有子节点
+        tableParentNode.children().remove();
+        sendScoreQuery();
+
+    }
+
+    function scoreQueryByNum() {
+        if (!isLogin) {
+            alertMsg("", "登录后使用完整功能");
+            return;
+        }
+        if (!hasScoreQuery) {
+            return;
+        }
+        var curPage = $("#score_page").val();
+        if (curPage <= 0) {
+            alertMsg("", "页码不正确");
+            return;
+        }
+        curPage--;
+        score_offset = limit * curPage;
+        var tableParentNode = $("#score_query_body");
+        // 删除所有子节点
+        tableParentNode.children().remove();
+        sendScoreQuery();
     }
 </script>
+<jsp:include page="checkLogin.jsp"></jsp:include>
 </body>
 
 </html>

@@ -25,9 +25,9 @@
     </resultMap>
     <select id="queryMajorByRank" resultMap="MajorObj">
         SELECT
-        *
+        major_info.*
         FROM
-        `major_info`
+        `major_info` , `school_info`
         WHERE
         #{queryObj.studentType} = `student_type` AND
         #{queryObj.province} = `province` AND
@@ -52,14 +52,19 @@
         <if test="queryObj.riskLevel == 3">
             #{queryObj.rank} > `low_rank` AND `middle_rank` > #{queryObj.rank} AND
         </if>
+        -- 省份筛选
+        <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
+            #{queryObj.schoolProvince} = `school_province` AND
+        </if>
+        major_info.school_id = school_info.school_id AND
         1=1
         ORDER BY `school_rank` ASC , `school_id` ASC;
     </select>
     <select id="queryMajorByScore" resultMap="MajorObj">
         SELECT
-        *
+        major_info.*
         FROM
-        `major_info`
+        `major_info`,`school_info`
         WHERE
         #{queryObj.studentType} = `student_type` AND
         #{queryObj.province} = `province` AND
@@ -84,7 +89,13 @@
         <if test="queryObj.riskLevel == 3">
             #{queryObj.score} > `middle_score` AND `low_score` > #{queryObj.score} AND
         </if>
+        -- 省份筛选
+        <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
+            #{queryObj.schoolProvince} = `school_province` AND
+        </if>
+        major_info.school_id = school_info.school_id AND
         1=1
+
         ORDER BY `school_rank` ASC , `school_id` ASC
         -- 一页30个数据
         LIMIT #{queryObj.offset},30;

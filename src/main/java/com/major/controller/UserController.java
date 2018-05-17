@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  */
 @Controller
 @RequestMapping("/userAction")
-public class LoginController {
+public class UserController {
     @Autowired
     private UserService userService;
 
@@ -28,6 +28,28 @@ public class LoginController {
     @ResponseBody
     public String login(HttpServletRequest request, HttpServletResponse response, UserObj uncheckedUser, HttpSession session) {
         ResultObj<Void> resultObj = userService.login(uncheckedUser, session);
+        return GsonUtils.toJson(resultObj);
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.POST, produces = {
+            "application/json; charset=utf-8"})
+    @ResponseBody
+    public String register(HttpServletRequest request, HttpServletResponse response, UserObj uncheckedUser, HttpSession session) {
+        ResultObj<Void> resultObj = userService.register(uncheckedUser, session);
+        return GsonUtils.toJson(resultObj);
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+        userService.logout(session);
+        return "login";
+    }
+
+    @RequestMapping(value = "/getUserInfo", method = RequestMethod.POST, produces = {
+            "application/json; charset=utf-8"})
+    @ResponseBody
+    public String getUserInfo(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+        ResultObj<UserObj> resultObj = userService.getUserInfo(session);
         return GsonUtils.toJson(resultObj);
     }
 }

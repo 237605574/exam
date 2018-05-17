@@ -26,12 +26,13 @@ public class MajorDaoTest {
         QueryObj queryObj = new QueryObj();
         queryObj.setOffset(0);
         queryObj.setProvince("广东");
+        queryObj.setSchoolProvince("安徽");
         queryObj.setRank(5100);
         queryObj.setScore(611);
-        queryObj.setRiskLevel(2);
+        queryObj.setRiskLevel(0);
         queryObj.setStudentType(0);
-        queryObj.setKeyWord("设计");
-        List<MajorObj> majorObjList = majorDao.queryMajorByScore(queryObj);
+//        queryObj.setKeyWord("设计");
+        List<MajorObj> majorObjList = majorDao.queryMajorByRank(queryObj);
         for(MajorObj majorObj:majorObjList){
             System.out.println("----------------------------");
             System.out.println("school id:"+ majorObj.getSchoolId());

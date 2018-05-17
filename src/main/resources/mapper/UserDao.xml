@@ -3,4 +3,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace指定我们的到具体的bean -->
 <mapper namespace="com.major.dao.UserDao">
+    <resultMap id="UserObj" type="com.major.entity.UserObj">
+        <id column="user_id" property="id"/>
+        <result column="user_name" property="name"/>
+        <result column="password" property="password"/>
+        <result column="authority" property="authority"/>
+    </resultMap>
+    <select id="getUser" resultMap="UserObj">
+        SELECT *
+        FROM
+        `user`
+        WHERE
+        `user_name` = #{userName};
+    </select>
+    <insert id="insert">
+        INSERT INTO
+        `user`
+        (`user_name`,`password`)
+        VALUES (#{name},#{password})
+    </insert>
 </mapper>

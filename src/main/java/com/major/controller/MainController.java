@@ -23,6 +23,10 @@ public class MainController {
     public String login() {
         return "login";
     }
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String register() {
+        return "register";
+    }
     @RequestMapping(value = "/mbti_test", method = RequestMethod.GET)
     public String mbtiTest() {
         return "mbti_test";
