@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-05-17 19:59:07
+Date: 2018-05-21 00:31:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -28,7 +28,7 @@ CREATE TABLE `id_generator` (
 -- ----------------------------
 -- Records of id_generator
 -- ----------------------------
-INSERT INTO `id_generator` VALUES ('user', '1000', '52000');
+INSERT INTO `id_generator` VALUES ('user', '1000', '59000');
 
 -- ----------------------------
 -- Table structure for major_info
@@ -109,9 +109,9 @@ CREATE TABLE `school_info` (
 -- ----------------------------
 -- Records of school_info
 -- ----------------------------
-INSERT INTO `school_info` VALUES ('1', '中山大学', '1', '广东广州', '文理类', '重点985', '广东');
-INSERT INTO `school_info` VALUES ('2', '华工', '1', '广东广州', '工科', '重点985', '北京');
-INSERT INTO `school_info` VALUES ('3', '广大', '1', '广东广州', '文理类', '垃圾学校', '安徽');
+INSERT INTO `school_info` VALUES ('1', '中山大学', '1', '广东', '文理类', '重点985', '广东');
+INSERT INTO `school_info` VALUES ('2', '华工', '1', '广东', '工科', '重点985', '北京');
+INSERT INTO `school_info` VALUES ('3', '广大', '1', '广东', '文理类', '垃圾学校', '安徽');
 
 -- ----------------------------
 -- Table structure for school_major

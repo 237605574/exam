@@ -13,7 +13,7 @@
         <result column="school_name" property="name"/>
         <result column="school_address" property="schoolAddress"/>
         <result column="school_type" property="schoolType"/>
-        <result column="school_rank" property="schoolRank"/>
+        <result column="heat_rank" property="schoolRank"/>
         <result column="school_pici" property="schoolPici"/>
     </resultMap>
     <select id="getSchoolByMajor" resultMap="SchoolObj">

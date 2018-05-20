@@ -54,7 +54,7 @@
         </if>
         -- 省份筛选
         <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
-            #{queryObj.schoolProvince} = `school_province` AND
+            #{queryObj.schoolProvince} = `school_address` AND
         </if>
         major_info.school_id = school_info.school_id AND
         1=1
