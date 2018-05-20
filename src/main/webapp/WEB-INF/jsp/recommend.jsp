@@ -125,9 +125,9 @@
                                             <div class="am-u-sm-9">
                                                 <select id="rank_risk" data-am-selected style="display: none;">
                                                     <option value="0">全部</option>
-                                                    <option value="1">风险大</option>
+                                                    <option value="1">风险高</option>
                                                     <option value="2">风险中</option>
-                                                    <option value="3">风险小</option>
+                                                    <option value="3">风险低</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -206,25 +206,25 @@
                             <div class="card-box">
                                 <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
                                 <div class="am-scrollable-horizontal">
-                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover">
+                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover am-scrollable-horizontal">
                                         <thead style="text-align: center">
                                         <tr>
                                             <th colspan="3" rowspan="2">学校/专业</th>
-                                            <th colspan="3">2015</th>
-                                            <th colspan="3">2016</th>
+                                            <th colspan="3" class="mobile_not_show">2015</th>
+                                            <th colspan="3" class="mobile_not_show">2016</th>
                                             <th colspan="3">2017</th>
-                                            <th>风险</th>
+                                            <th rowspan="2">风险</th>
                                         </tr>
-                                        <th>最高</th>
-                                        <th>最低</th>
-                                        <th>平均</th>
-                                        <th>最高</th>
-                                        <th>最低</th>
-                                        <th>平均</th>
-                                        <th>最高</th>
-                                        <th>最低</th>
-                                        <th>平均</th>
-                                        <th></th>
+                                        <tr>
+                                            <th class="mobile_not_show">最高</th>
+                                            <th class="mobile_not_show">最低</th>
+                                            <th class="mobile_not_show">平均</th>
+                                            <th class="mobile_not_show">最高</th>
+                                            <th class="mobile_not_show">最低</th>
+                                            <th class="mobile_not_show">平均</th>
+                                            <th>最高</th>
+                                            <th>最低</th>
+                                            <th>平均</th>
                                         </tr>
                                         </thead>
                                         <tbody id="rank_query_body">
@@ -242,7 +242,7 @@
                                             <a href="javascript:void(0);" onclick="rankPrePage()" class="">上一页</a>
                                         </li>
                                         <input id="rank_page" value="0"
-                                               style="width: 20px; border:none;text-decoration: underline"/>
+                                               style="width: 25px; border:none;text-decoration: underline;min-width: 20px;"/>
                                         <li class="am-pagination-next ">
                                             <a href="javascript:void(0);" onclick="rankNextPage()" class="">下一页</a>
                                         </li>
@@ -326,9 +326,9 @@
                                             <div class="am-u-sm-9">
                                                 <select id="score_risk" data-am-selected style="display: none;">
                                                     <option value="0">全部</option>
-                                                    <option value="1">风险大</option>
+                                                    <option value="1">风险高</option>
                                                     <option value="2">风险中</option>
-                                                    <option value="3">风险小</option>
+                                                    <option value="3">风险低</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -407,25 +407,26 @@
                             <div class="card-box">
                                 <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
                                 <div class="am-scrollable-horizontal">
-                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover">
+                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover am-scrollable-horizontal">
                                         <thead style="text-align: center">
                                         <tr>
                                             <th colspan="3" rowspan="2">学校/专业</th>
-                                            <th colspan="3">2015</th>
-                                            <th colspan="3">2016</th>
+                                            <th colspan="3" class="mobile_not_show">2015</th>
+                                            <th colspan="3" class="mobile_not_show">2016</th>
                                             <th colspan="3">2017</th>
-                                            <th>风险</th>
+                                            <th rowspan="2">风险</th>
                                         </tr>
-                                        <th>最高</th>
-                                        <th>最低</th>
-                                        <th>平均</th>
-                                        <th>最高</th>
-                                        <th>最低</th>
-                                        <th>平均</th>
-                                        <th>最高</th>
-                                        <th>最低</th>
-                                        <th>平均</th>
-                                        <th></th>
+                                        <tr>
+                                            <th class="mobile_not_show">最高</th>
+                                            <th class="mobile_not_show">最低</th>
+                                            <th class="mobile_not_show">平均</th>
+                                            <th class="mobile_not_show">最高</th>
+                                            <th class="mobile_not_show">最低</th>
+                                            <th class="mobile_not_show">平均</th>
+                                            <th>最高</th>
+                                            <th>最低</th>
+                                            <th>平均</th>
+                                            <th></th>
                                         </tr>
                                         </thead>
                                         <tbody id="score_query_body">
@@ -443,7 +444,7 @@
                                             <a href="javascript:void(0);" onclick="scorePrePage()" class="">上一页</a>
                                         </li>
                                         <input id="score_page" value="0"
-                                               style="width: 20px; border:none;text-decoration: underline"/>
+                                               style="width:25px; border:none;text-decoration: underline"/>
                                         <li class="am-pagination-next ">
                                             <a href="javascript:void(0);" onclick="scoreNextPage()" class="">下一页</a>
                                         </li>
@@ -473,6 +474,7 @@
 <script src="/js/common.js" charset="utf-8"></script>
 <script src="/js/jquery.tips.js" charset="utf-8"></script>
 <script src="/js/alert.js" charset="utf-8"></script>
+<jsp:include page="checkLogin.jsp"></jsp:include>
 <script>
     var hasRankQuery = false;
     var hasScoreQuery = false;
@@ -480,7 +482,7 @@
     var isRankPageEnd = true;
     var isScorePageEnd = true;
     //  用户是否登录
-    var isLogin = false;
+
     var limit = 30;
     var isMobile = false;
     var rank_keyWord;
@@ -511,6 +513,8 @@
         document.writeln("您的浏览设备为：");
         if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
             isMobile = true;
+            var nodes = $(".mobile_not_show");
+            nodes.css("display", "none");
             $("#mobile-tips-rank").css("display", "block");
             $("#mobile-tips-score").css("display", "block");
         }
@@ -526,7 +530,7 @@
             keyWord: rank_keyWord,
             riskLevel: rank_risk,
             offset: rank_offset,
-            schoolProvince:rank_schoolProvince,
+            schoolProvince: rank_schoolProvince,
         };
         hasRankQuery = true;
         $.ajax({
@@ -613,6 +617,11 @@
                 }
             }
             for (var j = 0; j < 3; j++) {
+                if (isMobile) {
+                    if (j != 2) {
+                        continue;
+                    }
+                }
                 for (var k = 0; k < 3; k++) {
                     trSchoolNode.append(schoolScores[j][k]);
                 }
@@ -660,6 +669,11 @@
                     }
                 }
                 for (var j = 0; j < 3; j++) {
+                    if (isMobile) {
+                        if (j != 2) {
+                            continue;
+                        }
+                    }
                     for (var k = 0; k < 3; k++) {
                         trMajorNode.append(majorScores[j][k]);
                     }
@@ -684,6 +698,9 @@
             isPageEnd = true;
         } else {
             isPageEnd = false;
+        }
+        if(isMobile){
+            $("td").css("font-size","1rem");
         }
     }
 
@@ -856,7 +873,7 @@
             keyWord: score_keyWord,
             riskLevel: score_risk,
             offset: score_offset,
-            schoolProvince:score_schoolProvince,
+            schoolProvince: score_schoolProvince,
         };
         hasScoreQuery = true;
         $.ajax({
@@ -945,7 +962,6 @@
         sendScoreQuery();
     }
 </script>
-<jsp:include page="checkLogin.jsp"></jsp:include>
 </body>
 
 </html>

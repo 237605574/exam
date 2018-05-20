@@ -38,19 +38,19 @@
         -- 风险筛选
         -- 全部
         <if test="queryObj.riskLevel == 0">
-            #{queryObj.rank} > `low_rank` AND `max_rank` > #{queryObj.rank} AND
+            #{queryObj.rank} >= `low_rank` AND `max_rank` > #{queryObj.rank} AND
         </if>
         -- 高风险
         <if test="queryObj.riskLevel == 1">
-            #{queryObj.rank} > `high_rank` AND `max_rank` > #{queryObj.rank} AND
+            #{queryObj.rank} >= `high_rank` AND `max_rank` > #{queryObj.rank} AND
         </if>
         -- 中等风险
         <if test="queryObj.riskLevel == 2">
-            #{queryObj.rank} > `middle_rank` AND `high_rank` > #{queryObj.rank} AND
+            #{queryObj.rank} >= `middle_rank` AND `high_rank` > #{queryObj.rank} AND
         </if>
         -- 低风险
         <if test="queryObj.riskLevel == 3">
-            #{queryObj.rank} > `low_rank` AND `middle_rank` > #{queryObj.rank} AND
+            #{queryObj.rank} >= `low_rank` AND `middle_rank` > #{queryObj.rank} AND
         </if>
         -- 省份筛选
         <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
@@ -75,19 +75,19 @@
         -- 风险筛选
         -- 全部
         <if test="queryObj.riskLevel == 0">
-            #{queryObj.score} > `max_score` AND `low_score` > #{queryObj.score} AND
+            #{queryObj.score} >= `max_score` AND `low_score` > #{queryObj.score} AND
         </if>
         -- 高风险
         <if test="queryObj.riskLevel == 1">
-            #{queryObj.score} > `max_score` AND `high_score` > #{queryObj.score} AND
+            #{queryObj.score} >= `max_score` AND `high_score` > #{queryObj.score} AND
         </if>
         -- 中等风险
         <if test="queryObj.riskLevel == 2">
-            #{queryObj.score} > `high_score` AND `middle_score` > #{queryObj.score} AND
+            #{queryObj.score} >= `high_score` AND `middle_score` > #{queryObj.score} AND
         </if>
         -- 低风险
         <if test="queryObj.riskLevel == 3">
-            #{queryObj.score} > `middle_score` AND `low_score` > #{queryObj.score} AND
+            #{queryObj.score} >= `middle_score` AND `low_score` > #{queryObj.score} AND
         </if>
         -- 省份筛选
         <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">

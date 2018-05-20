@@ -48,9 +48,9 @@ public class MajorObj {
             riskLevel = HIGH_RISK;
             return;
         }
-        if (score > middleScore) {
+        if (score >= middleScore) {
             riskLevel = LOW_RISK;
-        } else if (score > highScore) {
+        } else if (score >= highScore) {
             riskLevel = MIDDLE_RISK;
         } else {
             riskLevel = HIGH_RISK;

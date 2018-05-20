@@ -27,7 +27,7 @@ public class MajorDaoTest {
         queryObj.setOffset(0);
         queryObj.setProvince("广东");
         queryObj.setSchoolProvince("安徽");
-        queryObj.setRank(5100);
+        queryObj.setRank(5500);
         queryObj.setScore(611);
         queryObj.setRiskLevel(0);
         queryObj.setStudentType(0);

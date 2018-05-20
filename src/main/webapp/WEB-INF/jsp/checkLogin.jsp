@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
 <script>
+    var isLogin = false;
     //  获取登录信息
     $.ajax({
         type: "POST",
@@ -13,6 +14,7 @@
             // 注册成功
             if (result.code === 0) {
                 changeUserUI(result.data);
+                isLogin = true;
             } else {
 
             }
