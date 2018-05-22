@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace指定我们的到具体的bean -->
-<mapper namespace="com.major.dao.UserDao">
-    <resultMap id="UserObj" type="com.major.entity.UserObj">
+<mapper namespace="com.gaokao.dao.UserDao">
+    <resultMap id="UserObj" type="com.gaokao.entity.UserObj">
         <id column="user_id" property="id"/>
         <result column="user_name" property="name"/>
         <result column="password" property="password"/>

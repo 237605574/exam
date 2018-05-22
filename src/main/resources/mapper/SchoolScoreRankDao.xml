@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace指定我们的到具体的bean -->
-<mapper namespace="com.major.dao.SchoolScoreRankDao">
+<mapper namespace="com.gaokao.dao.SchoolScoreRankDao">
     <!-- 更新用户信息 -->
-    <resultMap id="ScoreRankObj" type="com.major.entity.ScoreRankObj">
+    <resultMap id="ScoreRankObj" type="com.gaokao.entity.ScoreRankObj">
         <!--
       字标签属性:id 表示属性
       column：数据库查询的列的字段，property：自定义数据类型的变量的名字

@@ -74,8 +74,8 @@
                                             <div class="am-u-sm-9">
                                                 <select id="rank_studentType" data-am-selected
                                                         style="display: none;">
-                                                    <option value="0">理科</option>
-                                                    <option value="1">文科</option>
+                                                    <option value="1">理科</option>
+                                                    <option value="0">文科</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -202,11 +202,11 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="am-u-md-9 am-u-sm-centered" id="rank_result_container">
+                        <div class="am-u-md-11 am-u-sm-centered" id="rank_result_container">
                             <div class="card-box">
                                 <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
                                 <div class="am-scrollable-horizontal">
-                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover am-scrollable-horizontal">
+                                    <table class="am-table    am-table-hover am-scrollable-horizontal">
                                         <thead style="text-align: center">
                                         <tr>
                                             <th colspan="3" rowspan="2">学校/专业</th>
@@ -275,8 +275,8 @@
                                             <div class="am-u-sm-9">
                                                 <select id="score_studentType" data-am-selected
                                                         style="display: none;">
-                                                    <option value="0">理科</option>
-                                                    <option value="1">文科</option>
+                                                    <option value="1">理科</option>
+                                                    <option value="0">文科</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -403,11 +403,11 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="am-u-md-9 am-u-sm-centered" id="score_result_container">
+                        <div class="am-u-md-11 am-u-sm-centered" id="score_result_container">
                             <div class="card-box">
                                 <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
-                                <div class="am-scrollable-horizontal">
-                                    <table class="am-table am-table-bordered  am-text-nowrap am-table-hover am-scrollable-horizontal">
+                                <div class="">
+                                    <table class="am-table   am-table-hover am-scrollable-horizontal">
                                         <thead style="text-align: center">
                                         <tr>
                                             <th colspan="3" rowspan="2">学校/专业</th>
@@ -481,7 +481,7 @@
     var isScorePageEnd = true;
     //  用户是否登录
 
-    var limit = 30;
+    var limit = 10;
     var isMobile = false;
     var rank_keyWord;
     var rank_province;
@@ -541,7 +541,7 @@
                 // 查询正确
                 if (result.code === 0) {
                     var tableParentNode = $("#rank_query_body");
-                    showData(tableParentNode, result.data, isRankPageEnd);
+                    showData(tableParentNode, result.data, true);
                 } else {
                     alertErrorMsg(result.msg);
                 }
@@ -570,7 +570,7 @@
         sendRankQuery();
     }
 
-    function showData(tableParentNode, recommendDatas, isPageEnd) {
+    function showData(tableParentNode, recommendDatas, isRank) {
         // var tableParentNode = $("#rank_query_body");
         // 删除所有子节点
         tableParentNode.children().remove();
@@ -692,13 +692,21 @@
                 tableParentNode.append(trMajorNode);
             }
         }
-        if (majorNum < 30) {
-            isPageEnd = true;
-        } else {
-            isPageEnd = false;
+        if (isRank) {
+            if (majorNum < limit) {
+                isRankPageEnd = true;
+            } else {
+                isRankPageEnd = false;
+            }
+        }else{
+            if (majorNum < limit) {
+                isScorePageEnd = true;
+            } else {
+                isScorePageEnd = false;
+            }
         }
-        if(isMobile){
-            $("td").css("font-size","1rem");
+        if (isMobile) {
+            $("td").css("font-size", "1rem");
         }
     }
 
@@ -884,7 +892,7 @@
                 // 查询正确
                 if (result.code === 0) {
                     var tableParentNode = $("#score_query_body");
-                    showData(tableParentNode, result.data, isScorePageEnd);
+                    showData(tableParentNode, result.data, false);
                 } else {
                     alertErrorMsg(result.msg);
                 }
