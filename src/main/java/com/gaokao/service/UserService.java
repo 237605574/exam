@@ -48,7 +48,7 @@ public class UserService {
         return new ResultObj<>(ResultCodes.SUCCESS);
     }
 
-    public ResultObj<Void> logout( HttpSession session) {
+    public ResultObj<Void> logout(HttpSession session) {
         //  移除所有session
         Enumeration<String> attributeNames = session.getAttributeNames();
         while (attributeNames.hasMoreElements()) {
@@ -78,5 +78,9 @@ public class UserService {
             return new ResultObj<>(ResultCodes.PARAM_ERROR, "找不到用户");
         }
         return new ResultObj<>(ResultCodes.SUCCESS);
+    }
+
+    public ResultObj<Integer> updateVipState() {
+        return new ResultObj<>(ResultCodes.SUCCESS, userDao.updateVipState());
     }
 }

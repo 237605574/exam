@@ -16,11 +16,17 @@ public class Init implements ApplicationListener<ContextRefreshedEvent> {
     //  初始化操作
     @Override
     public void onApplicationEvent(ContextRefreshedEvent cre) {
+        System.out.println("init start");
         if (cre.getApplicationContext().getParent() == null) {
+            System.out.println("init ing");
             applicationContext = cre.getApplicationContext();
             //  在这里进行初始化操作
             //  初始化id
             IdMgr.getInstance().init();
+
+            //  定时更新vip状态
+            UpdateTimerTask.getInstance().init();
+            UpdateTimerTask.getInstance().start();
         }
     }
 

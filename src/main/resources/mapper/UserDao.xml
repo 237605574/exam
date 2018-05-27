@@ -28,4 +28,11 @@
         SET authority = 1, vip_remain_days = vip_remain_days + #{payDays}
         WHERE `user_name` = #{userName};
     </update>
+    <update id="updateVipState">
+        UPDATE
+        `user`
+        SET authority = 0
+        WHERE
+        NOW() > day_time and  authority != 0;
+    </update>
 </mapper>
