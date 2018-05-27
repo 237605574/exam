@@ -10,6 +10,14 @@ public class RecommendObj {
     private SchoolObj school;
     private List<MajorObj> majorList = new ArrayList<>();
 
+    public RecommendObj() {
+    }
+
+    public RecommendObj(SchoolObj school, List<MajorObj> majorList) {
+        this.school = school;
+        this.majorList = majorList;
+    }
+
     public void addMajor(MajorObj majorObj) {
         majorList.add(majorObj);
     }

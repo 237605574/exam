@@ -23,7 +23,7 @@
         FROM
         `school_score_rank`
         WHERE
-        `school_id` = #{schoolObj.id} AND
+        `school_id` = #{schoolObj.schoolId} AND
         `province` = #{queryObj.province} AND
         `student_type` = #{queryObj.studentType}
     </select>

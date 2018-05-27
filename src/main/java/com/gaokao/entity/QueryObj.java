@@ -1,5 +1,7 @@
 package com.gaokao.entity;
 
+import com.gaokao.common.constants.RiskLevel;
+
 /**
  * @author lurongzhi
  * <p>
@@ -33,7 +35,8 @@ public class QueryObj {
 
 
     private boolean checkOther() {
-        return (province != null) && (studentType != null) && (riskLevel != null) && (offset != null);
+        return (province != null) && (studentType != null) && (riskLevel != null) && (offset != null)
+                && (riskLevel <= RiskLevel.LOW_RISK && riskLevel >= RiskLevel.ALL_LEVEL);
     }
 
     public Integer getOffset() {

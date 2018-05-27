@@ -10624,6 +10624,8 @@ label.am-radio {
   padding: .5em;
 }
 .am-selected-list {
+  max-height:300px;
+  overflow-y:scroll;
   margin: 0;
   padding: 0;
   list-style: none;

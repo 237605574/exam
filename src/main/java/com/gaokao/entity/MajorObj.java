@@ -1,5 +1,7 @@
 package com.gaokao.entity;
 
+import com.gaokao.common.constants.RiskLevel;
+
 import java.util.List;
 
 /**
@@ -7,9 +9,7 @@ import java.util.List;
  * 对应数据库中的 专业 表格
  */
 public class MajorObj {
-    private static final Integer HIGH_RISK = 1;
-    private static final Integer MIDDLE_RISK = 2;
-    private static final Integer LOW_RISK = 3;
+
     private String name;
     private Integer majorId;
     private Integer schoolId;
@@ -26,34 +26,33 @@ public class MajorObj {
     private Integer lowScore;
 
     private List<ScoreRankObj> scoreRankList;
-
-    private Integer riskLevel = HIGH_RISK;
+    private Integer riskLevel = RiskLevel.HIGH_RISK;
 
     public void genRankRisk(Integer rank) {
         if (middleRank == null || highRank == null || lowRank == null || maxRank == null) {
-            riskLevel = HIGH_RISK;
+            riskLevel = RiskLevel.HIGH_RISK;
             return;
         }
         if (rank < middleRank) {
-            riskLevel = LOW_RISK;
+            riskLevel = RiskLevel.LOW_RISK;
         } else if (rank < highRank) {
-            riskLevel = MIDDLE_RISK;
+            riskLevel = RiskLevel.MIDDLE_RISK;
         } else {
-            riskLevel = HIGH_RISK;
+            riskLevel = RiskLevel.HIGH_RISK;
         }
     }
 
     public void genScoreRisk(Integer score) {
         if (middleScore == null || highScore == null || lowScore == null || maxScore == null) {
-            riskLevel = HIGH_RISK;
+            riskLevel = RiskLevel.HIGH_RISK;
             return;
         }
         if (score >= middleScore) {
-            riskLevel = LOW_RISK;
+            riskLevel = RiskLevel.LOW_RISK;
         } else if (score >= highScore) {
-            riskLevel = MIDDLE_RISK;
+            riskLevel = RiskLevel.MIDDLE_RISK;
         } else {
-            riskLevel = HIGH_RISK;
+            riskLevel = RiskLevel.HIGH_RISK;
         }
     }
 

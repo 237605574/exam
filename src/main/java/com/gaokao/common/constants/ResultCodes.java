@@ -11,6 +11,6 @@ public class ResultCodes {
     //常用错误码
     public static final int PARAM_ERROR = 20;
     public static final int DATABASE_ERROR = 21;
-    //  不想分类型的错误
-    public static final int  COMMON_ERROR = 99;
+    //  不想分类型的错误,想偷懒就用这个错误码吧
+    public static final int COMMON_ERROR = 99;
 }

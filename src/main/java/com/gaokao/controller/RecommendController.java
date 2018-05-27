@@ -36,4 +36,19 @@ public class RecommendController {
     public String scoreRecommend(HttpServletRequest request, HttpServletResponse response, QueryObj queryObj, HttpSession session) {
         return GsonUtils.toJson(recommendService.queryByScore(queryObj, session));
     }
+
+    @RequestMapping(value = "/schoolRankRecommend", method = RequestMethod.POST, produces = {
+            "application/json; charset=utf-8"})
+    @ResponseBody
+    public String schoolRankRecommend(HttpServletRequest request, HttpServletResponse response, QueryObj queryObj, HttpSession session) {
+        return GsonUtils.toJson(recommendService.schoolRankRecommend(queryObj, session));
+    }
+
+    @RequestMapping(value = "/schoolScoreRecommend", method = RequestMethod.POST, produces = {
+            "application/json; charset=utf-8"})
+    @ResponseBody
+    public String schoolScoreRecommend(HttpServletRequest request, HttpServletResponse response, QueryObj queryObj, HttpSession session) {
+        return GsonUtils.toJson(recommendService.schoolScoreRecommend(queryObj, session));
+    }
+
 }

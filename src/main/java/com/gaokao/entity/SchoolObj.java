@@ -1,5 +1,7 @@
 package com.gaokao.entity;
 
+import com.gaokao.common.constants.RiskLevel;
+
 import java.util.List;
 
 /**
@@ -7,12 +9,52 @@ import java.util.List;
  */
 public class SchoolObj {
     private String name;
-    private Integer id;
+    private Integer schoolId;
     private Integer schoolRank;
     private String schoolPici;
     private String schoolType;
     private String schoolAddress;
     private List<ScoreRankObj> scoreRankList;
+
+    private Integer maxRank;
+    private Integer highRank;
+    private Integer middleRank;
+    private Integer lowRank;
+    private Integer maxScore;
+    private Integer highScore;
+    private Integer middleScore;
+    private Integer lowScore;
+
+
+    private Integer riskLevel = RiskLevel.HIGH_RISK;
+
+    public void genRankRisk(Integer rank) {
+        if (middleRank == null || highRank == null || lowRank == null || maxRank == null) {
+            riskLevel = RiskLevel.HIGH_RISK;
+            return;
+        }
+        if (rank < middleRank) {
+            riskLevel = RiskLevel.LOW_RISK;
+        } else if (rank < highRank) {
+            riskLevel = RiskLevel.MIDDLE_RISK;
+        } else {
+            riskLevel = RiskLevel.HIGH_RISK;
+        }
+    }
+
+    public void genScoreRisk(Integer score) {
+        if (middleScore == null || highScore == null || lowScore == null || maxScore == null) {
+            riskLevel = RiskLevel.HIGH_RISK;
+            return;
+        }
+        if (score >= middleScore) {
+            riskLevel = RiskLevel.LOW_RISK;
+        } else if (score >= highScore) {
+            riskLevel = RiskLevel.MIDDLE_RISK;
+        } else {
+            riskLevel = RiskLevel.HIGH_RISK;
+        }
+    }
 
 
     public List<ScoreRankObj> getScoreRankList() {
@@ -31,12 +73,12 @@ public class SchoolObj {
         this.name = name;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getSchoolId() {
+        return schoolId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setSchoolId(Integer schoolId) {
+        this.schoolId = schoolId;
     }
 
     public Integer getSchoolRank() {

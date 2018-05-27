@@ -9,12 +9,20 @@
       字标签属性:id 表示属性
       column：数据库查询的列的字段，property：自定义数据类型的变量的名字
       -->
-        <result column="school_id" property="id"/>
+        <result column="school_id" property="schoolId"/>
         <result column="school_name" property="name"/>
         <result column="school_address" property="schoolAddress"/>
         <result column="school_type" property="schoolType"/>
         <result column="school_heat_rank" property="schoolRank"/>
         <result column="school_pici" property="schoolPici"/>
+        <result column="max_rank" property="maxRank"/>
+        <result column="high_rank" property="highRank"/>
+        <result column="middle_rank" property="middleRank"/>
+        <result column="low_rank" property="lowRank"/>
+        <result column="max_score" property="maxScore"/>
+        <result column="high_score" property="highScore"/>
+        <result column="middle_score" property="middleScore"/>
+        <result column="low_score" property="lowScore"/>
     </resultMap>
     <select id="getSchoolByMajor" resultMap="SchoolObj">
         SELECT
@@ -23,5 +31,73 @@
         `school_info`
         WHERE
         #{majorObj.schoolId} = `school_id`
+    </select>
+    <select id="querySchoolByRank" resultMap="SchoolObj">
+        SELECT
+        school_recommend.*
+        FROM
+        `school_recommend`
+        WHERE
+        #{queryObj.studentType} = `student_type` AND
+        #{queryObj.province} = `province` AND
+        -- 风险筛选
+        -- 全部
+        <if test="queryObj.riskLevel == 0">
+            `max_rank` > #{queryObj.rank} AND #{queryObj.rank} >= `low_rank` AND
+        </if>
+        -- 高风险
+        <if test="queryObj.riskLevel == 1">
+            `max_rank` > #{queryObj.rank} AND  #{queryObj.rank} >= `high_rank` AND
+        </if>
+        -- 中等风险
+        <if test="queryObj.riskLevel == 2">
+            `high_rank` > #{queryObj.rank} AND  #{queryObj.rank} >= `middle_rank` AND
+        </if>
+        -- 低风险
+        <if test="queryObj.riskLevel == 3">
+            `middle_rank` > #{queryObj.rank} AND #{queryObj.rank} >= `low_rank` AND
+        </if>
+        -- 省份筛选
+        <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
+            #{queryObj.schoolProvince} = `school_address` AND
+        </if>
+        1=1
+        ORDER BY school_recommend.school_rank ASC , school_recommend.school_id ASC
+        -- 一页10个数据
+        LIMIT #{queryObj.offset},5;
+    </select>
+    <select id="querySchoolByScore" resultMap="SchoolObj">
+        SELECT
+        school_recommend.*
+        FROM
+        `school_recommend`
+        WHERE
+        #{queryObj.studentType} = `student_type` AND
+        #{queryObj.province} = `province` AND
+        -- 风险筛选
+        -- 全部
+        <if test="queryObj.riskLevel == 0">
+            #{queryObj.score} >= `max_score` AND `low_score` > #{queryObj.score} AND
+        </if>
+        -- 高风险
+        <if test="queryObj.riskLevel == 1">
+            #{queryObj.score} >= `max_score` AND `high_score` > #{queryObj.score} AND
+        </if>
+        -- 中等风险
+        <if test="queryObj.riskLevel == 2">
+            #{queryObj.score} >= `high_score` AND `middle_score` > #{queryObj.score} AND
+        </if>
+        -- 低风险
+        <if test="queryObj.riskLevel == 3">
+            #{queryObj.score} >= `middle_score` AND `low_score` > #{queryObj.score} AND
+        </if>
+        -- 省份筛选
+        <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
+            #{queryObj.schoolProvince} = `school_address` AND
+        </if>
+        1=1
+        ORDER BY school_recommend.school_rank ASC ,school_recommend.school_id ASC
+        -- 一页30个数据
+        LIMIT #{queryObj.offset},5;
     </select>
 </mapper>
