@@ -3,6 +3,7 @@ package com.gaokao.service;
 import com.gaokao.common.constants.ResultCodes;
 import com.gaokao.common.constants.SessionStr;
 import com.gaokao.dao.UserDao;
+import com.gaokao.entity.PayObj;
 import com.gaokao.entity.ResultObj;
 import com.gaokao.entity.UserObj;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,5 +66,17 @@ public class UserService {
         safeUser.setName(userObj.getName());
         safeUser.setAuthority(userObj.getAuthority());
         return new ResultObj<>(ResultCodes.SUCCESS, safeUser);
+    }
+
+    public ResultObj<Void> pay(PayObj payInfo, HttpSession session) {
+        if (payInfo == null || payInfo.getUserName() == null) {
+            return new ResultObj<>(ResultCodes.PARAM_ERROR, "用户参数错误");
+        }
+        //todo 具体的支付逻辑
+        int updateResult = userDao.pay(payInfo.getUserName(), payInfo.getPayDays());
+        if (updateResult <= 0) {
+            return new ResultObj<>(ResultCodes.PARAM_ERROR, "找不到用户");
+        }
+        return new ResultObj<>(ResultCodes.SUCCESS);
     }
 }

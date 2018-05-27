@@ -16,7 +16,6 @@
 <div class="layout">
     <jsp:include page="layout_header.jsp"></jsp:include>
 
-
     <!--===========layout-container================-->
     <div class="layout-container">
         <div class="index-page">

@@ -12,4 +12,5 @@ public interface UserDao {
     UserObj getUser(String userName);
 
     int insert(@Param("name") String name, @Param("password") String password);
+    int pay(@Param("userName") String name, @Param("payDays") Integer payDays);
 }

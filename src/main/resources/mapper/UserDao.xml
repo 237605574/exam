@@ -22,4 +22,10 @@
         (`user_name`,`password`)
         VALUES (#{name},#{password})
     </insert>
+    <update id="pay">
+        UPDATE
+        `user`
+        SET authority = 1, vip_remain_days = vip_remain_days + #{payDays}
+        WHERE `user_name` = #{userName};
+    </update>
 </mapper>
