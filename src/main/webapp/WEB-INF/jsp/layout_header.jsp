@@ -7,14 +7,30 @@
 <link rel="stylesheet" href="/css/common.min.css"/>
 <link rel="stylesheet" href="/css/index.min.css"/>
 <link rel="stylesheet" href="/css/app.css">
+<meta name="viewport" content="width=device-width" />
+<style>
+    .common-pay-close {
+        position: absolute;
+        top: -26px;
+        right: 15px;
+        width: 16px;
+        height: 16px;
+        background-image: url(//i.gtimg.cn/vipstyle/mobile/client/vipcommon/pay/v1/release/img/dialog_noiap/icon-sb2bae753c7.png?max_age=2592000);
+        background-position: 0 -23px;
+        background-repeat: no-repeat;
+    }
+</style>
 <%--充值框--%>
-<div class="modal fade modal-fullscreen" id="pay" style="position: absolute;margin: auto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade modal-fullscreen" id="pay" style="position: fixed;margin: auto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="max-width: 700px">
         <div class="modal-content">
-            <iframe id="pay-iframe" scrolling="no" style="zoom: 1;width: 690px; height: 480px; border: none; z-index: 4500;"  src="<%=request.getContextPath()%>/gaokao/pay" src="" frameBorder="0" ></iframe>
+            <iframe id="pay-iframe" scrolling="no" style=" zoom: 1;width: 690px; height: 480px; border: none; z-index: 4500;"  src="<%=request.getContextPath()%>/gaokao/pay" src="" frameBorder="0" ></iframe>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div id="hidebg" style="position: absolute; left: 0px; top: 0px;background-color: #000; width: 100%;filter: alpha(opacity = 60); opacity: 0.6;display: none; z-Index: 9998;"></div>
+<div class="common-pay-close"></div>
+<iframe id="m-pay-iframe" scrolling="no" style="display: none; bottom: 0; position:fixed; zoom: 1;width: 100%; height: 480px; border: none; z-index: 4500;"  src="<%=request.getContextPath()%>/gaokao/pay" src="" frameBorder="0" ></iframe>
 
 <div class="layout-header am-hide-sm-only">
 
@@ -175,7 +191,7 @@
                                 </li>
                                 <li class=""><a id ="m_user_pos1" href="<%=request.getContextPath()%>/gaokao/login" class="">登录</a></li>
                                 <li class=""><a id ="m_user_pos2" href="<%=request.getContextPath()%>/gaokao/register" class="">注册</a></li>
-                                <li class=""><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#pay">充值</button></li>
+                                <li class=""><button id="btn-pay" class="btn btn-primary btn-lg" data-toggle="modal" >充值</button></li>
                             </ul>
 
                         </div>
@@ -195,3 +211,43 @@
 <script src="/js/jquery-2.1.0.js" charset="utf-8"></script>
 <script src="/js/bootstrap.min.js" charset="utf-8"></script>
 <script src="/js/fs-modal.min.js"></script>
+<script>
+    $(function () {
+        justOneTime = false;
+    })
+    $("#btn-pay").click(function (e) {
+        // $("#pay").css("transform","scale(0.5)");
+        // $("#pay").css("position","absolute");
+        // $("#pay").css("z-index","9999");
+        $("#m-pay-iframe").show()
+        $("#m-pay-iframe").css("z-index","9999");
+        e.stopPropagation();
+        $(document).click(function(){
+            closeIframe()
+        });
+        adjustIframe();
+    });
+
+    function adjustIframe() {
+        var ifr = document.getElementById('m-pay-iframe')  ;
+        $("#m-pay-iframe").show()
+        $("#m-pay-iframe").css("z-index","9999");
+        var hideobj = document.getElementById("hidebg");
+        hideobj.style.display = "block"; //显示隐藏层
+        hideobj.style.height = document.body.clientHeight + "px"; //设置隐藏层的高度为当前页面高度
+        var wd = ifr.contentWindow.document.documentElement.scrollWidth;
+        var ht = ifr.contentWindow.document.documentElement.scrollHeight;
+        if(!justOneTime){
+            x = document.getElementById('m-pay-iframe').clientWidth / wd;
+            justOneTime = true;
+        }
+        ifr.style.width = wd +'px';
+        ifr.style.height = ht +'px';
+        ifr.style.transform = 'scale('+ x + ')';
+        ifr.style.transformOrigin='0 0';
+    }
+    function closeIframe(){
+        $("#m-pay-iframe").hide();
+        $("#hidebg").hide()
+    }
+</script>
