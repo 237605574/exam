@@ -1,6 +1,7 @@
 package com.gaokao.controller;
 
 import com.gaokao.common.uitls.GsonUtils;
+import com.gaokao.entity.PayObj;
 import com.gaokao.entity.ResultObj;
 import com.gaokao.entity.UserObj;
 import com.gaokao.service.UserService;
@@ -50,6 +51,14 @@ public class UserController {
     @ResponseBody
     public String getUserInfo(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         ResultObj<UserObj> resultObj = userService.getUserInfo(session);
+        return GsonUtils.toJson(resultObj);
+    }
+
+    @RequestMapping(value = "/pay", method = RequestMethod.POST, produces = {
+            "application/json; charset=utf-8"})
+    @ResponseBody
+    public String pay(HttpServletRequest request, HttpServletResponse response, PayObj payInfo, HttpSession session) {
+        ResultObj<Void> resultObj = userService.pay(payInfo, session);
         return GsonUtils.toJson(resultObj);
     }
 }

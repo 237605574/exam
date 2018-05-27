@@ -1,7 +1,19 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page isELIgnored="false" %>
+<link rel="stylesheet" href="/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="/css/fs-modal.min.css" type="text/css" />
+<%--充值框--%>
+<div class="modal fade modal-fullscreen" id="pay" style="position: absolute;margin: auto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 700px">
+        <div class="modal-content">
+            <iframe id="pay-iframe" scrolling="no" style="zoom: 1;width: 690px; height: 480px; border: none; z-index: 4500;"  src="<%=request.getContextPath()%>/gaokao/pay" src="" frameBorder="0" ></iframe>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div class="layout-header am-hide-sm-only">
+
     <!--topbar start-->
     <div data-am-sticky style="z-index: 1011">
         <div class="topbar">
@@ -34,6 +46,7 @@
                         <div class="topbar-right am-text-right am-fr">
                             <a  id="user_pos1" href="<%=request.getContextPath()%>/gaokao/login">登录</a>
                             <a id="user_pos2"  href="<%=request.getContextPath()%>/gaokao/register">注册</a>
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#pay">充值</button>
                         </div>
                     </div>
                 </div>
@@ -41,7 +54,6 @@
         </div>
     </div>
     <!--topbar end-->
-
 
     <!--header start-->
     <div>
@@ -159,6 +171,7 @@
                                 </li>
                                 <li class=""><a id ="m_user_pos1" href="<%=request.getContextPath()%>/gaokao/login" class="">登录</a></li>
                                 <li class=""><a id ="m_user_pos2" href="<%=request.getContextPath()%>/gaokao/register" class="">注册</a></li>
+                                <li class=""><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#pay">充值</button></li>
                             </ul>
 
                         </div>
@@ -175,3 +188,6 @@
     </div>
     <!--mobile header end-->
 </div>
+<script src="/js/jquery-2.1.0.js" charset="utf-8"></script>
+<script src="/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="/js/fs-modal.min.js"></script>

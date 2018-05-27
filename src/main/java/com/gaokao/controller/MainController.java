@@ -35,4 +35,8 @@ public class MainController {
     public String recommend() {
         return "recommend";
     }
+    @RequestMapping(value = "/pay", method = RequestMethod.GET)
+    public String pay() {
+        return "pay";
+    }
 }
