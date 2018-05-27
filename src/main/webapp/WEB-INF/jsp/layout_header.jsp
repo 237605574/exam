@@ -3,6 +3,10 @@
 <%@ page isELIgnored="false" %>
 <link rel="stylesheet" href="/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="/css/fs-modal.min.css" type="text/css" />
+<link rel="stylesheet" href="/css/amazeui.css"/>
+<link rel="stylesheet" href="/css/common.min.css"/>
+<link rel="stylesheet" href="/css/index.min.css"/>
+<link rel="stylesheet" href="/css/app.css">
 <%--充值框--%>
 <div class="modal fade modal-fullscreen" id="pay" style="position: absolute;margin: auto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="max-width: 700px">
