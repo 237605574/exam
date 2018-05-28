@@ -237,8 +237,10 @@
         hideobj.style.height = document.body.clientHeight + "px"; //设置隐藏层的高度为当前页面高度
         var wd = ifr.contentWindow.document.documentElement.scrollWidth;
         var ht = ifr.contentWindow.document.documentElement.scrollHeight;
+        // alert( wd+ ":" + document.body.clientWidth+ ":" +wd)
+        // alert( wd+ ":" + document.body.clientWidth+ ":" +wd)
         if(!justOneTime){
-            x = document.getElementById('m-pay-iframe').clientWidth / wd;
+            x = document.body.clientWidth / wd;
             justOneTime = true;
         }
         ifr.style.width = wd +'px';
