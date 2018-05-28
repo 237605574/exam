@@ -13,10 +13,10 @@
                                 <strong class="footer_main--column_title">关于我们</strong>
                                 <div class="footer_about">
                                     <p class="footer_about--text">
-                                        云适配(AllMobilize Inc.) 是全球领先的HTML5企业移动化解决方案供应商，由前微软美国总部IE浏览器核心研发团队成员及移动互联网行业专家在美国西雅图创立.
+                                        哲哲科技。专业教育服务平台。
                                     </p>
                                     <p class="footer_about--text">
-                                        云适配跨屏云也成功应用于超过30万家企业网站，包括微软、联想等世界500强企业
+                                        旗下教育服务有高考教育，公考服务，文化传媒。
                                     </p>
                                 </div>
                             </div>
@@ -28,9 +28,9 @@
                             <div class="footer_main--column">
                                 <strong class="footer_main--column_title">联系详情</strong>
                                 <ul class="footer_contact_info">
-                                    <li class="footer_contact_info--item"><i class="am-icon-phone"></i><span>服务专线：400 069 0309</span></li>
-                                    <li class="footer_contact_info--item"><i class="am-icon-envelope-o"></i><span>yunshipei.com</span></li>
-                                    <li class="footer_contact_info--item"><i class="am-icon-map-marker"></i><span>北京市海淀区海淀大街27号天使大厦（原亿景大厦）三层</span></li>
+                                    <li class="footer_contact_info--item"><i class="am-icon-phone"></i><span>服务专线：0557-3022789</span></li>
+                                    <li class="footer_contact_info--item"><i class="am-icon-envelope-o"></i><span>哲哲网络科技有限责任公司</span></li>
+                                    <li class="footer_contact_info--item"><i class="am-icon-map-marker"></i><span>安徽省宿州市云集文化商业街民俗风情街7栋0508</span></li>
                                     <li class="footer_contact_info--item"><i class="am-icon-clock-o"></i><span>Monday - Friday, 9am - 6 pm; </span></li>
                                 </ul>
                             </div>

@@ -12,7 +12,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author lurongzhi
  */
 public class IdMgr {
-    private  final String USER_KEY = "user";
+    private final String USER_KEY = "user";
     private ConcurrentHashMap<String, Generator> generatorMap = new ConcurrentHashMap<>();
 
     public static IdMgr getInstance() {
@@ -34,7 +34,7 @@ public class IdMgr {
 //                    idGenPojo.getCurrentId() + " " +
 //                    idGenPojo.getStep());
             Generator generator = new Generator(idGenPojo);
-            this.generatorMap.put(idGenPojo.getName(),generator);
+            this.generatorMap.put(idGenPojo.getName(), generator);
         }
 
     }
@@ -47,7 +47,7 @@ public class IdMgr {
         return generator.genId();
     }
 
-    public Long genUserId(){
+    public Long genUserId() {
         return genId(USER_KEY);
     }
 }
