@@ -265,7 +265,13 @@
                                                 </button>
                                             </div>
                                         </div>
-
+                                        <div class="am-form-group">
+                                            <label class="am-u-sm-3 am-form-label" for="major_keyWord">专业关键词 </label>
+                                            <div class="am-u-sm-9">
+                                                <input type="text" placeholder="输入专业关键词"
+                                                       style="min-width:200px;width:50%" id="major_keyWord">
+                                            </div>
+                                        </div>
                                         <div class="am-form-group">
                                             <label class="am-u-sm-3 am-form-label" id="major_text">高考排名 </label>
                                             <div class="am-u-sm-9">
@@ -380,13 +386,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="am-form-group">
-                                            <label class="am-u-sm-3 am-form-label" for="major_keyWord">专业关键词 </label>
-                                            <div class="am-u-sm-9">
-                                                <input type="text" placeholder="输入专业关键词"
-                                                       style="min-width:200px;width:50%" id="major_keyWord">
-                                            </div>
-                                        </div>
+
                                         <div class="am-form-group">
                                             <div class="am-u-sm-9 am-u-sm-push-3">
                                                 <button type="button"
@@ -514,7 +514,6 @@
         var bIsAndroid = sUserAgent.match(/android/i) == "android";
         var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        document.writeln("您的浏览设备为：");
         if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
             isMobile = true;
             var nodes = $(".mobile_not_show");
