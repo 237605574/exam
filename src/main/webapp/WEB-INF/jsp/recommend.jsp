@@ -27,7 +27,7 @@
     <!--===========layout-container================-->
     <div class="layout-container">
         <div class="index-page">
-            <div data-am-widget="tabs" class="am-tabs am-tabs-default">
+            <div data-am-widget="tabs" class="am-tabs am-tabs-default" >
                 <ul class="am-tabs-nav am-cf index-tab">
                     <li class="am-active">
                         <a href="[data-tab-panel-0] am-g">
@@ -53,24 +53,26 @@
                     </li>
                 </ul>
                 <%--推荐输入界面开始--%>
-                <div class="am-tabs-bd">
+                <div class="am-tabs-bd " style="background-color:#f0f0f0">
                     <%--学校预测--%>
                     <div data-tab-panel-0 class="am-tab-panel am-active">
-                        <div class="index-banner">
-                            <div class="widget am-cf">
+                        <div class="am-u-md-9 am-u-sm-centered am-panel am-panel-default" >
+                            <div class="am-cf">
                                 <form class="am-form tpl-form-line-form">
-                                    <div class="am-u-md-9 am-u-sm-centered">
+                                    <div class="am-u-md-4 am-u-sm-centered">
                                         <div class="am-form-group">
-                                            <div class="am-u-sm-9 am-u-sm-push-3 recommend_type_container">
-                                                <button type="button" class="am-btn am-btn-primary "
-                                                        id="school_rank_btn" onclick="schoolRankSelect()">根据排名推荐
-                                                </button>
-                                                <button type="button" class="am-btn am-btn-default "
-                                                        id="school_score_btn" onclick="schoolScoreSelect()">根据分数推荐
-                                                </button>
+                                            <div class=" recommend_type_container"
+                                                 id="school_recommend_type">
+                                                <div class="am-u-center">
+                                                    <button type="button" class="am-btn am-btn-primary am-fl"
+                                                            id="school_rank_btn" onclick="schoolRankSelect()">根据排名推荐
+                                                    </button>
+                                                    <button type="button" class="am-btn am-btn-default am-fr"
+                                                            id="school_score_btn" onclick="schoolScoreSelect()">根据分数推荐
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
-
                                         <div class="am-form-group">
                                             <label class="am-u-sm-3 am-form-label" id="school_text">高考排名 </label>
                                             <div class="am-u-sm-9">
@@ -203,8 +205,8 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="am-u-md-9 am-u-sm-centered">
-                            <div class="card-box">
+                        <div class="am-u-md-9 am-u-sm-centered am-u-md-9 am-u-sm-centered am-panel am-panel-default">
+                            <div class="widget-head am-cf">
                                 <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
                                 <div class="am-scrollable-horizontal">
                                     <table class="am-table    am-table-hover am-scrollable-horizontal">
@@ -254,15 +256,20 @@
                         <div class="index-banner">
                             <div class="widget am-cf">
                                 <form class="am-form tpl-form-line-form">
-                                    <div class="am-u-md-9 am-u-sm-centered">
-                                        <div class="am-form-group">
-                                            <div class="am-u-sm-9 am-u-sm-push-3 recommend_type_container">
-                                                <button type="button" class="am-btn am-btn-primary "
-                                                        id="major_rank_btn" onclick="majorRankSelect()">根据排名推荐
-                                                </button>
-                                                <button type="button" class="am-btn am-btn-default "
-                                                        id="major_score_btn" onclick="majorScoreSelect()">根据分数推荐
-                                                </button>
+                                    <div class="am-u-md-4 am-u-sm-centered">
+
+                                            <div class="am-form-group">
+                                                <div class="am-u-md-9 am-u-sm-centered">
+                                                <div class=" recommend_type_container">
+                                                    <div class="am-u-center">
+                                                        <button type="button" class="am-btn am-btn-primary am-fl"
+                                                                id="major_rank_btn" onclick="majorRankSelect()">根据排名推荐
+                                                        </button>
+                                                        <button type="button" class="am-btn am-btn-default am-fr"
+                                                                id="major_score_btn" onclick="majorScoreSelect()">根据分数推荐
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="am-form-group">
@@ -520,8 +527,8 @@
             nodes.css("display", "none");
             $(".score_rank_th").attr("colspan", "2");
             $(".mobile-tips").css("display", "block");
-            $(".recommend_type_container").removeClass("am-u-sm-9")
-            $(".recommend_type_container").removeClass("am-u-sm-push-3")
+            $(".recommend_type_container").removeClass("am-u-sm-9");
+            $(".recommend_type_container").removeClass("am-u-sm-push-2");
         }
     }
 
