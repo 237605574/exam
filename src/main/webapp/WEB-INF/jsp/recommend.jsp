@@ -476,7 +476,7 @@
 <script src="/js/common.js" charset="utf-8"></script>
 <script src="/js/jquery.tips.js" charset="utf-8"></script>
 <script src="/js/alert.js" charset="utf-8"></script>
-<jsp:include page="checkLogin.jsp"></jsp:include>
+<jsp:include page="checkUserInfo.jsp"></jsp:include>
 <script>
     //  判断是否查询过，用于页面跳转
     var hasSchoolQuery = false;
@@ -940,6 +940,10 @@
             alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
+        if(!isVip){
+            alertMsg("", "请开通会员进行后续操作");
+            return;
+        }
         if (isSchoolPageEnd) {
             alertMsg("", "没有更多数据了")
             return;
@@ -961,6 +965,10 @@
             alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
+        if(!isVip){
+            alertMsg("", "请开通会员进行后续操作");
+            return;
+        }
         var curPage = $("#school_page").val();
         if (curPage <= 1) {
             return;
@@ -980,6 +988,10 @@
     function schoolQueryByNum() {
         if (!isLogin) {
             alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
+            return;
+        }
+        if(!isVip){
+            alertMsg("", "请开通会员进行后续操作");
             return;
         }
         if (!hasSchoolQuery) {
@@ -1117,6 +1129,10 @@
             alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
+        if(!isVip){
+            alertMsg("", "请开通会员进行后续操作");
+            return;
+        }
         if (isMajorPageEnd) {
             alertMsg("", "没有更多数据了")
             return;
@@ -1138,6 +1154,10 @@
             alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
+        if(!isVip){
+            alertMsg("", "请开通会员进行后续操作");
+            return;
+        }
         var curPage = $("#major_page").val();
         if (curPage <= 1) {
             return;
@@ -1157,6 +1177,10 @@
     function majorQueryByNum() {
         if (!isLogin) {
             alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
+            return;
+        }
+        if(!isVip){
+            alertMsg("", "请开通会员进行后续操作");
             return;
         }
         if (!hasMajorQuery) {

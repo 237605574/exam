@@ -3,6 +3,7 @@
 <%@ page isELIgnored="false" %>
 <script>
     var isLogin = false;
+    var isVip = false;
     //  获取登录信息
     $.ajax({
         type: "POST",
@@ -15,6 +16,10 @@
             if (result.code === 0) {
                 changeUserUI(result.data);
                 isLogin = true;
+                var userInfo = result.data;
+                if(result.data.authority ==0){
+                    isVip = false;
+                }
             } else {
 
             }
