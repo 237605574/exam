@@ -178,7 +178,9 @@ public class RecommendService {
                 lastSchoolId = majorObj.getSchoolId();
             }
             //  获取分数
+            TimeCostUtils.getInstance().setPoint("开始获取专业分数");
             majorObj.setScoreRankList(majorScoreRankDao.getScoreRankList(majorObj));
+            TimeCostUtils.getInstance().setPoint("获取专业分数");
             recommendObj.addMajor(majorObj);
         }
         //  把最后一个推荐加进去结果列表

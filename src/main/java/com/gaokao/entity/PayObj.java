@@ -1,5 +1,8 @@
 package com.gaokao.entity;
 
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @author lurongzhi
  */
@@ -10,12 +13,29 @@ public class PayObj {
     private Integer money;
     private Integer payDays;
 
+
+    public Date genVipEndDate() {
+        Date vipEndDate = new Date();
+        if (payDays == null) {
+            return null;
+        }
+        Calendar cal = Calendar.getInstance();
+
+        cal.setTime(vipEndDate);
+
+        cal.add(Calendar.DATE, payDays);
+
+        vipEndDate = cal.getTime();
+        return vipEndDate;
+
+    }
+
     public Long getUserId() {
         return userid;
     }
 
     public void setUserId(Long userid) {
-        this.userid =  userid;
+        this.userid = userid;
     }
 
     public String getUserName() {
@@ -23,7 +43,7 @@ public class PayObj {
     }
 
     public void setUserName(String userName) {
-        this.userName =  userName;
+        this.userName = userName;
     }
 
     public Integer getChannelId() {

@@ -34,7 +34,7 @@ public class UpdateTimerTask {
             @Override
             public void run() {
                 ResultObj<Integer> result = userService.updateVipState();
-                System.out.println("upadte:" + result.getData());
+//                System.out.println("upadte:" + result.getData());
             }
         }, 0, timerSecond * 1000);
     }

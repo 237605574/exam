@@ -8,6 +8,17 @@ function alertErrorMsg(msg) {
     alertMsg("发生错误", msg);
 }
 
+function alertMsgLink(msgHead, msgBody, targetUrl) {
+    $("#msg-body").text(msgBody);
+    $("#msg-head").text(msgHead);
+    $("#msg-alert").modal({
+        relatedTarget: this,
+        onConfirm: function () {
+            window.location.href = targetUrl;
+        }
+    });
+}
+
 function alertMsg(msgHead, msgBody) {
     $("#msg-body").text(msgBody);
     $("#msg-head").text(msgHead);

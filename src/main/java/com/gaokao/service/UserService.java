@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.Enumeration;
 
 /**
@@ -73,9 +74,19 @@ public class UserService {
             return new ResultObj<>(ResultCodes.PARAM_ERROR, "用户参数错误");
         }
         //todo 具体的支付逻辑
-        int updateResult = userDao.pay(payInfo.getUserName(), payInfo.getPayDays());
+        Date vipEndDate = payInfo.genVipEndDate();
+        if (vipEndDate == null) {
+            return new ResultObj<>(ResultCodes.PARAM_ERROR, "充值信息错误");
+        }
+        int updateResult = userDao.pay(payInfo.getUserName(), vipEndDate);
         if (updateResult <= 0) {
             return new ResultObj<>(ResultCodes.PARAM_ERROR, "找不到用户");
+        }
+        //  更新用户信息
+        UserObj userObj = (UserObj) session.getAttribute(SessionStr.LOGIN_INFO);
+        if (userObj != null && userObj.getName().equals(payInfo.getUserName())) {
+            UserObj dbUser = userDao.getUser(userObj.getName());
+            session.setAttribute(SessionStr.LOGIN_INFO, dbUser);
         }
         return new ResultObj<>(ResultCodes.SUCCESS);
     }

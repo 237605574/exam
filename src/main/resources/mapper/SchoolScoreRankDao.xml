@@ -26,5 +26,6 @@
         `school_id` = #{schoolObj.schoolId} AND
         `province` = #{queryObj.province} AND
         `student_type` = #{queryObj.studentType}
+        order by `year` desc ;
     </select>
 </mapper>

@@ -5,6 +5,8 @@ import com.gaokao.entity.RecommendObj;
 import com.gaokao.entity.SchoolObj;
 
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author lurongzhi
@@ -12,6 +14,21 @@ import java.util.Arrays;
 public class Test {
     public static void main(String[] args) {
 //        recommendTest();
+//        printProvince();
+        Date vipEndDate = new Date();
+        System.out.println(vipEndDate);
+        Calendar cal = Calendar.getInstance();
+
+        cal.setTime(vipEndDate);
+
+        cal.add(Calendar.DATE, 500);
+
+        vipEndDate = cal.getTime();
+        System.out.println(vipEndDate);
+    }
+
+
+    private static void printProvince() {
         String str;
         str = "安徽\n" +
                 "北京\n" +
@@ -44,7 +61,8 @@ public class Test {
                 "西藏\n" +
                 "云南\n" +
                 "浙江";
-        System.out.println(str);;
+        System.out.println(str);
+        ;
         String[] provinces = str.split("\n");
         System.out.println(Arrays.toString(provinces));
         for(String province:provinces){

@@ -27,7 +27,7 @@
     <!--===========layout-container================-->
     <div class="layout-container">
         <div class="index-page">
-            <div data-am-widget="tabs" class="am-tabs am-tabs-default" >
+            <div data-am-widget="tabs" class="am-tabs am-tabs-default">
                 <ul class="am-tabs-nav am-cf index-tab">
                     <li class="am-active">
                         <a href="[data-tab-panel-0] am-g">
@@ -56,7 +56,7 @@
                 <div class="am-tabs-bd " style="background-color:#f0f0f0">
                     <%--学校预测--%>
                     <div data-tab-panel-0 class="am-tab-panel am-active">
-                        <div class="am-u-md-9 am-u-sm-centered am-panel am-panel-default" >
+                        <div class="am-u-md-9 am-u-sm-centered am-panel am-panel-default">
                             <div class="am-cf">
                                 <form class="am-form tpl-form-line-form">
                                     <div class="am-u-md-4 am-u-sm-centered">
@@ -207,21 +207,23 @@
                         </div>
                         <div class="am-u-md-9 am-u-sm-centered am-u-md-9 am-u-sm-centered am-panel am-panel-default">
                             <div class="widget-head am-cf">
-                                <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
+                                <h4 class="header-title m-t-0 m-b-30">学校推荐结果</h4>
                                 <div class="am-scrollable-horizontal">
                                     <table class="am-table    am-table-hover am-scrollable-horizontal">
                                         <thead style="text-align: center">
 
                                         <tr>
                                             <th colspan="3" rowspan="2">学校/专业</th>
-                                            <th colspan="4" class="score_rank_th">近年分数</th>
+                                            <th colspan="6" class="score_rank_th">近年分数</th>
                                             <th rowspan="2" colspan="2">风险</th>
                                         </tr>
                                         <tr>
                                             <th>年份</th>
-                                            <th class="mobile_not_show">最高</th>
-                                            <th class="mobile_not_show">最低</th>
                                             <th>平均</th>
+                                            <th class="mobile_not_show">年份</th>
+                                            <th class="mobile_not_show">平均</th>
+                                            <th class="mobile_not_show">年份</th>
+                                            <th class="mobile_not_show">平均</th>
                                             <th></th>
                                         </tr>
                                         </thead>
@@ -253,22 +255,20 @@
                     </div>
                     <%--专业预测--%>
                     <div data-tab-panel-1 class="am-tab-panel ">
-                        <div class="index-banner">
-                            <div class="widget am-cf">
+                        <div class="am-u-md-9 am-u-sm-centered am-panel am-panel-default">
+                            <div class="am-cf">
                                 <form class="am-form tpl-form-line-form">
                                     <div class="am-u-md-4 am-u-sm-centered">
-
-                                            <div class="am-form-group">
-                                                <div class="am-u-md-9 am-u-sm-centered">
-                                                <div class=" recommend_type_container">
-                                                    <div class="am-u-center">
-                                                        <button type="button" class="am-btn am-btn-primary am-fl"
-                                                                id="major_rank_btn" onclick="majorRankSelect()">根据排名推荐
-                                                        </button>
-                                                        <button type="button" class="am-btn am-btn-default am-fr"
-                                                                id="major_score_btn" onclick="majorScoreSelect()">根据分数推荐
-                                                        </button>
-                                                    </div>
+                                        <div class="am-form-group">
+                                            <div class=" recommend_type_container"
+                                                 id="major_recommend_type">
+                                                <div class="am-u-center">
+                                                    <button type="button" class="am-btn am-btn-primary am-fl"
+                                                            id="major_rank_btn" onclick="majorRankSelect()">根据排名推荐
+                                                    </button>
+                                                    <button type="button" class="am-btn am-btn-default am-fr"
+                                                            id="major_score_btn" onclick="majorScoreSelect()">根据分数推荐
+                                                    </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -351,11 +351,11 @@
                                             </div>
                                         </div>
                                         <div class="am-form-group">
-                                            <label for="major_schoolProvince" class="am-u-sm-3 am-form-label">
+                                            <label for="major_majorProvince" class="am-u-sm-3 am-form-label">
                                                 学校省份
                                             </label>
                                             <div class="am-u-sm-9">
-                                                <select id="major_schoolProvince" data-am-selected="{searchBox: 1}"
+                                                <select id="major_majorProvince" data-am-selected="{searchBox: 1}"
                                                         style="display: none;height:250px; overflow-y: scroll">
                                                     <option value="全部">全部</option>
                                                     <option value="安徽">安徽</option>
@@ -392,14 +392,11 @@
                                                 </select>
                                             </div>
                                         </div>
-
-
                                         <div class="am-form-group">
                                             <div class="am-u-sm-9 am-u-sm-push-3">
                                                 <button type="button"
                                                         class="am-btn am-btn-primary tpl-btn-bg-color-success "
-                                                        style="max-width:200px;width:80%"
-                                                        onclick="majorQueryClick()">
+                                                        style="max-width:200px;width:80%" onclick="majorQueryClick()">
                                                     进行专业推荐
                                                 </button>
                                             </div>
@@ -414,8 +411,8 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="am-u-md-9 am-u-sm-centered">
-                            <div class="card-box">
+                        <div class="am-u-md-9 am-u-sm-centered am-u-md-9 am-u-sm-centered am-panel am-panel-default">
+                            <div class="widget-head am-cf">
                                 <h4 class="header-title m-t-0 m-b-30">专业推荐结果</h4>
                                 <div class="am-scrollable-horizontal">
                                     <table class="am-table    am-table-hover am-scrollable-horizontal">
@@ -423,14 +420,16 @@
 
                                         <tr>
                                             <th colspan="3" rowspan="2">学校/专业</th>
-                                            <th colspan="4" class="score_rank_th">近年分数</th>
+                                            <th colspan="6" class="score_rank_th">近年分数</th>
                                             <th rowspan="2" colspan="2">风险</th>
                                         </tr>
                                         <tr>
                                             <th>年份</th>
-                                            <th class="mobile_not_show">最高</th>
-                                            <th class="mobile_not_show">最低</th>
                                             <th>平均</th>
+                                            <th class="mobile_not_show">年份</th>
+                                            <th class="mobile_not_show">平均</th>
+                                            <th class="mobile_not_show">年份</th>
+                                            <th class="mobile_not_show">平均</th>
                                             <th></th>
                                         </tr>
                                         </thead>
@@ -490,7 +489,7 @@
     var scoreQuery = 1;
 
     var schoolLimit = 5;
-    var majorLimit = 10;
+    var majorLimit = 5;
     var isMobile = false;
     var school_studentProvince;
     var school_studentType;
@@ -625,35 +624,38 @@
             trSchoolNode.attr("data-am-collapse", trPanelStr);
             var schoolData = recommendData.school;
             var schoolInfoStr = schoolData.name + "  " + schoolData.schoolPici + "  " + schoolData.schoolAddress;
-            var schoolInfo;
             var schoolInfo = $("<td colspan = '3' style='text-align: start'></td>");
             schoolInfo.html(schoolInfoStr);
             trSchoolNode.append(schoolInfo);
-            //  历年最高分
+            //  历年平均分
             var schoolScores = new Array();
-            for (var ii = 0; ii < 4; ii++) {
-                var tmpTd = $("<td></td>");
-                tmpTd.html("--");
-                schoolScores.push(tmpTd);
+            for (var ii = 0; ii < 3; ii++) {
+                var tmpTds = new Array();
+                for (var iii = 0; iii < 2; iii++) {
+                    var tmpTd = $("<td></td>");
+                    tmpTd.html("--");
+                    tmpTds.push(tmpTd);
+                }
+                schoolScores.push(tmpTds);
             }
             var scoreRankList = schoolData.scoreRankList;
-            var lastYear = -1;
             for (var j = 0; j < scoreRankList.length; j++) {
-                if (scoreRankList[j].year > lastYear) {
-                    lastYear = scoreRankList[j].year;
-                    schoolScores[0].html(scoreRankList[j].year);
-                    schoolScores[1].html(transformScore(scoreRankList[j].maxScore, scoreRankList[j]));
-                    schoolScores[2].html(transformScore(scoreRankList[j].minScore, scoreRankList[j]));
-                    schoolScores[3].html(transformScore(scoreRankList[j].avgScore, scoreRankList[j]));
+                //  只显示近三年
+                if (j >= 3) {
+                    break;
                 }
+                schoolScores[j][0].html(scoreRankList[j].year);
+                schoolScores[j][1].html(transformScore(scoreRankList[j].avgScore, scoreRankList[j]));
             }
-            for (var j = 0; j < 4; j++) {
+            for (var j = 0; j < 3; j++) {
                 if (isMobile) {
-                    if (j < 3 && j > 0) {
-                        continue;
+                    if (j >= 1) {
+                        break;
                     }
                 }
-                trSchoolNode.append(schoolScores[j]);
+                for (var jj = 0; jj < 2; jj++) {
+                    trSchoolNode.append(schoolScores[j][jj]);
+                }
             }
             tdRisk = $("<td></td>");
             if (schoolData.riskLevel == 1) {
@@ -678,32 +680,39 @@
                 tdName.html(majorData.name);
                 trMajorNode.append(tdName);
 
-                // 历年最高分最低分
+
+                //  历年平均分
                 var majorScores = new Array();
-                for (var ii = 0; ii < 4; ii++) {
-                    var tmpTd = $("<td></td>");
-                    tmpTd.html("--");
-                    majorScores.push(tmpTd);
-                }
-                var majorScoreList = majorData.scoreRankList;
-                lastYear = -1;
-                for (var jj = 0; jj < majorScoreList.length; jj++) {
-                    if (majorScoreList[jj].year > lastYear) {
-                        lastYear = majorScoreList[jj].year;
-                        majorScores[0].html(majorScoreList[jj].year);
-                        majorScores[1].html(transformScore(majorScoreList[jj].maxScore, majorScoreList[jj]));
-                        majorScores[2].html(transformScore(majorScoreList[jj].minScore, majorScoreList[jj]));
-                        majorScores[3].html(transformScore(majorScoreList[jj].avgScore, majorScoreList[jj]));
+                for (var ii = 0; ii < 3; ii++) {
+                    var tmpTds = new Array();
+                    for (var iiii = 0; iiii < 2; iiii++) {
+                        var tmpTd = $("<td></td>");
+                        tmpTd.html("--");
+                        tmpTds.push(tmpTd);
                     }
+                    majorScores.push(tmpTds);
                 }
-                for (var j = 0; j < 4; j++) {
+                var scoreRankList = majorData.scoreRankList;
+                for (var j = 0; j < scoreRankList.length; j++) {
+                    //  只显示近三年
+                    if (j >= 3) {
+                        break;
+                    }
+                    majorScores[j][0].html(scoreRankList[j].year);
+                    majorScores[j][1].html(transformScore(scoreRankList[j].avgScore, scoreRankList[j]));
+                }
+                for (var j = 0; j < 3; j++) {
                     if (isMobile) {
-                        if (j < 3 && j > 0) {
-                            continue;
+                        if (j >= 1) {
+                            break;
                         }
                     }
-                    trMajorNode.append(majorScores[j]);
+                    for (var jj = 0; jj < 2; jj++) {
+                        trMajorNode.append(majorScores[j][jj]);
+                    }
                 }
+
+
                 var tdRisk = $("<td></td>");
                 if (majorData.riskLevel == 1) {
                     tdRisk.html("风险高");
@@ -742,36 +751,41 @@
             var trSchoolNode = $("<tr class='am-primary'></tr>");
             var schoolData = recommendData.school;
             var schoolInfoStr = schoolData.name + "  " + schoolData.schoolPici + "  " + schoolData.schoolAddress;
-            var schoolInfo;
             var schoolInfo = $("<td colspan = '3' style='text-align: start'></td>");
             schoolInfo.html(schoolInfoStr);
             trSchoolNode.append(schoolInfo);
-            //  历年最高分
+            //  历年平均分
             var schoolScores = new Array();
-            for (var ii = 0; ii < 4; ii++) {
-                var tmpTd = $("<td></td>");
-                tmpTd.html("--");
-                schoolScores.push(tmpTd);
+            for (var ii = 0; ii < 3; ii++) {
+                var tmpTds = new Array();
+                for (var iii = 0; iii < 2; iii++) {
+                    var tmpTd = $("<td></td>");
+                    tmpTd.html("--");
+                    tmpTds.push(tmpTd);
+                }
+                schoolScores.push(tmpTds);
             }
             var scoreRankList = schoolData.scoreRankList;
-            var lastYear = -1;
             for (var j = 0; j < scoreRankList.length; j++) {
-                if (scoreRankList[j].year > lastYear) {
-                    lastYear = scoreRankList[j].year;
-                    schoolScores[0].html(scoreRankList[j].year);
-                    schoolScores[1].html(transformScore(scoreRankList[j].maxScore, scoreRankList[j]));
-                    schoolScores[2].html(transformScore(scoreRankList[j].minScore, scoreRankList[j]));
-                    schoolScores[3].html(transformScore(scoreRankList[j].avgScore, scoreRankList[j]));
+                //  只显示近三年
+                if (j >= 3) {
+                    break;
                 }
+                schoolScores[j][0].html(scoreRankList[j].year);
+                schoolScores[j][1].html(transformScore(scoreRankList[j].avgScore, scoreRankList[j]));
             }
-            for (var j = 0; j < 4; j++) {
+            for (var j = 0; j < 3; j++) {
                 if (isMobile) {
-                    if (j < 3 && j > 0) {
-                        continue;
+                    if (j >= 1) {
+                        break;
                     }
                 }
-                trSchoolNode.append(schoolScores[j]);
+                for (var jj = 0; jj < 2; jj++) {
+                    trSchoolNode.append(schoolScores[j][jj]);
+                }
             }
+
+
             tdRisk = $("<td></td>");
             if (schoolData.riskLevel == 1) {
                 tdRisk.html("风险高");
@@ -796,32 +810,66 @@
                 tdName.html(majorData.name);
                 trMajorNode.append(tdName);
 
-                // 历年最高分最低分
+
+                //  历年平均分
                 var majorScores = new Array();
-                for (var ii = 0; ii < 4; ii++) {
-                    var tmpTd = $("<td></td>");
-                    tmpTd.html("--");
-                    majorScores.push(tmpTd);
-                }
-                var majorScoreList = majorData.scoreRankList;
-                lastYear = -1;
-                for (var jj = 0; jj < majorScoreList.length; jj++) {
-                    if (majorScoreList[jj].year > lastYear) {
-                        lastYear = majorScoreList[jj].year;
-                        majorScores[0].html(majorScoreList[jj].year);
-                        majorScores[1].html(transformScore(majorScoreList[jj].maxScore, majorScoreList[jj]));
-                        majorScores[2].html(transformScore(majorScoreList[jj].minScore, majorScoreList[jj]));
-                        majorScores[3].html(transformScore(majorScoreList[jj].avgScore, majorScoreList[jj]));
+                for (var ii = 0; ii < 3; ii++) {
+                    var tmpTds = new Array();
+                    for (var iiii = 0; iiii < 2; iiii++) {
+                        var tmpTd = $("<td></td>");
+                        tmpTd.html("--");
+                        tmpTds.push(tmpTd);
                     }
+                    majorScores.push(tmpTds);
                 }
-                for (var j = 0; j < 4; j++) {
+                var scoreRankList = majorData.scoreRankList;
+                for (var j = 0; j < scoreRankList.length; j++) {
+                    //  只显示近三年
+                    if (j >= 3) {
+                        break;
+                    }
+                    majorScores[j][0].html(scoreRankList[j].year);
+                    majorScores[j][1].html(transformScore(scoreRankList[j].avgScore, scoreRankList[j]));
+                }
+                for (var j = 0; j < 3; j++) {
                     if (isMobile) {
-                        if (j < 3 && j > 0) {
-                            continue;
+                        if (j >= 1) {
+                            break;
                         }
                     }
-                    trMajorNode.append(majorScores[j]);
+                    for (var jj = 0; jj < 2; jj++) {
+                        trMajorNode.append(majorScores[j][jj]);
+                    }
                 }
+
+
+
+                // // 历年最高分最低分
+                // var majorScores = new Array();
+                // for (var ii = 0; ii < 4; ii++) {
+                //     var tmpTd = $("<td></td>");
+                //     tmpTd.html("--");
+                //     majorScores.push(tmpTd);
+                // }
+                // var majorScoreList = majorData.scoreRankList;
+                // lastYear = -1;
+                // for (var jj = 0; jj < majorScoreList.length; jj++) {
+                //     if (majorScoreList[jj].year > lastYear) {
+                //         lastYear = majorScoreList[jj].year;
+                //         majorScores[0].html(majorScoreList[jj].year);
+                //         majorScores[1].html(transformScore(majorScoreList[jj].maxScore, majorScoreList[jj]));
+                //         majorScores[2].html(transformScore(majorScoreList[jj].minScore, majorScoreList[jj]));
+                //         majorScores[3].html(transformScore(majorScoreList[jj].avgScore, majorScoreList[jj]));
+                //     }
+                // }
+                // for (var j = 0; j < 4; j++) {
+                //     if (isMobile) {
+                //         if (j < 3 && j > 0) {
+                //             continue;
+                //         }
+                //     }
+                //     trMajorNode.append(majorScores[j]);
+                // }
                 var tdRisk = $("<td></td>");
                 if (majorData.riskLevel == 1) {
                     tdRisk.html("风险高");
@@ -889,7 +937,7 @@
 
     function schoolNextPage() {
         if (!isLogin) {
-            alertMsg("", "登录后使用完整功能");
+            alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
         if (isSchoolPageEnd) {
@@ -910,7 +958,7 @@
 
     function schoolPrePage() {
         if (!isLogin) {
-            alertMsg("", "登录后使用完整功能");
+            alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
         var curPage = $("#school_page").val();
@@ -931,7 +979,7 @@
 
     function schoolQueryByNum() {
         if (!isLogin) {
-            alertMsg("", "登录后使用完整功能");
+            alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
         if (!hasSchoolQuery) {
@@ -1066,7 +1114,7 @@
 
     function majorNextPage() {
         if (!isLogin) {
-            alertMsg("", "登录后使用完整功能");
+            alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
         if (isMajorPageEnd) {
@@ -1087,7 +1135,7 @@
 
     function majorPrePage() {
         if (!isLogin) {
-            alertMsg("", "登录后使用完整功能");
+            alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
         var curPage = $("#major_page").val();
@@ -1108,7 +1156,7 @@
 
     function majorQueryByNum() {
         if (!isLogin) {
-            alertMsg("", "登录后使用完整功能");
+            alertMsgLink("", "登录后使用完整功能", "<%=request.getContextPath()%>/gaokao/login");
             return;
         }
         if (!hasMajorQuery) {

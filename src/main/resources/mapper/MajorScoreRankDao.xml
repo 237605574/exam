@@ -26,5 +26,6 @@
         `major_id` = #{majorObj.majorId} AND
         `province` = #{majorObj.province} AND
         `student_type` = #{majorObj.studentType}
+        order by `year` desc ;
     </select>
 </mapper>

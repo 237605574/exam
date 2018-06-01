@@ -25,7 +25,7 @@
     <update id="pay">
         UPDATE
         `user`
-        SET authority = 1, vip_remain_days = vip_remain_days + #{payDays}
+        SET authority = 1, vip_end_date = #{payDays}
         WHERE `user_name` = #{userName};
     </update>
     <update id="updateVipState">
@@ -33,6 +33,6 @@
         `user`
         SET authority = 0
         WHERE
-        NOW() > day_time and  authority != 0;
+        NOW() > vip_end_date and  authority != 0;
     </update>
 </mapper>

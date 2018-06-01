@@ -3,6 +3,8 @@ package com.gaokao.dao;
 import com.gaokao.entity.UserObj;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.Date;
+
 /**
  * @author lurongzhi
  * <p>
@@ -13,7 +15,7 @@ public interface UserDao {
 
     int insert(@Param("name") String name, @Param("password") String password);
 
-    int pay(@Param("userName") String name, @Param("payDays") Integer payDays);
+    int pay(@Param("userName") String name, @Param("payDays") Date payDays);
 
     int updateVipState();
 }
