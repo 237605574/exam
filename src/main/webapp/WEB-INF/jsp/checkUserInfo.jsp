@@ -19,6 +19,8 @@
                 var userInfo = result.data;
                 if(result.data.authority ==0){
                     isVip = false;
+                }else {
+                    isVip = true;
                 }
             } else {
 
