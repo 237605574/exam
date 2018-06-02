@@ -43,7 +43,7 @@ public class UserController {
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public String logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
         userService.logout(session);
-        return "login";
+        return "home";
     }
 
     @RequestMapping(value = "/getUserInfo", method = RequestMethod.POST, produces = {

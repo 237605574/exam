@@ -77,80 +77,97 @@
         <!--index-container start-->
         <div class="index-container">
             <div class="am-g">
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f011.jpg" alt="">
-                        <h3 class="features_item--title">志愿智能模拟</h3>
-                        <p class="features_item--text">
-                            多种填报模式，99.9%成功率
-                        </p>
+                <a href="/gaokao/recommend">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f011.jpg" alt="">
+                            <h3 class="features_item--title">志愿智能模拟</h3>
+                            <p class="features_item--text">
+                                多种填报模式，99.9%成功率
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f012.jpg" alt="">
-                        <h3 class="features_item--title">历年数据查询</h3>
-                        <p class="features_item--text">
-                            5年官方权威数据
-                        </p>
+                </a>
+                <a href="http://daxue.eol.cn/">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f012.jpg" alt="">
+                            <h3 class="features_item--title">历年数据查询</h3>
+                            <p class="features_item--text">
+                                5年官方权威数据
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f013.jpg" alt="">
-                        <h3 class="features_item--title">大学信息</h3>
-                        <p class="features_item--text">
-                            全国2856所院校
-                        </p>
+                </a>
+                <a href="http://www.diyigaokao.com/college">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f013.jpg" alt="">
+                            <h3 class="features_item--title">大学信息</h3>
+                            <p class="features_item--text">
+                                全国2856所院校
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f014.jpg" alt="">
-                        <h3 class="features_item--title">了解专业</h3>
-                        <p class="features_item--text">
-                            详解1200多专业
-                        </p>
+                </a>
+                <a href="http://www.diyigaokao.com/major/">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f014.jpg" alt="">
+                            <h3 class="features_item--title">了解专业</h3>
+                            <p class="features_item--text">
+                                详解1200多专业
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+
             <div class="am-g">
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f015.jpg" alt="">
-                        <h3 class="features_item--title">未来职业</h3>
-                        <p class="features_item--text">
-                            涵盖870个职业
-                        </p>
+                <a href="http://www.diyigaokao.com/occupation/list">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f015.jpg" alt="">
+                            <h3 class="features_item--title">未来职业</h3>
+                            <p class="features_item--text">
+                                涵盖870个职业
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f016.jpg" alt="">
-                        <h3 class="features_item--title">学习资料</h3>
-                        <p class="features_item--text">
-                            20万份学习资料
-                        </p>
+                </a>
+                <a href="http://www.diyigaokao.com/learning/exam">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f016.jpg" alt="">
+                            <h3 class="features_item--title">学习资料</h3>
+                            <p class="features_item--text">
+                                20万份学习资料
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f017.jpg" alt="">
-                        <h3 class="features_item--title">知识讲解</h3>
-                        <p class="features_item--text">
-                            9科2345个视频
-                        </p>
+                </a>
+                <a href="http://www.diyigaokao.com/learning/material">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f017.jpg" alt="">
+                            <h3 class="features_item--title">知识讲解</h3>
+                            <p class="features_item--text">
+                                9科2345个视频
+                            </p>
+                        </div>
                     </div>
-                </div>
-                <div class="am-u-md-3">
-                    <div class="features_item">
-                        <img src="/images/index/f018.jpg" alt="">
-                        <h3 class="features_item--title">自我评估测试</h3>
-                        <p class="features_item--text">
-                            5大国际标准测评
-                        </p>
+                </a>
+                <a href="/gaokao/mbti_test">
+                    <div class="am-u-md-3">
+                        <div class="features_item">
+                            <img src="/images/index/f018.jpg" alt="">
+                            <h3 class="features_item--title">自我评估测试</h3>
+                            <p class="features_item--text">
+                                5大国际标准测评
+                            </p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <!--index-container end-->
         </div>
@@ -176,7 +193,7 @@
         success: function (result) {
             // 注册成功
             if (result.code === 0) {
-                $("#login-block").css("display","none");
+                $("#login-block").css("display", "none");
             } else {
 
             }

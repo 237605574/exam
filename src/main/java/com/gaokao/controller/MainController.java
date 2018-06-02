@@ -21,7 +21,7 @@ public class MainController {
     }
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
-        return "login";
+        return "home";
     }
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public String register() {
