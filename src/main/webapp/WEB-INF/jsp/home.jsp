@@ -167,13 +167,21 @@
 <script src="/js/alert.js" charset="utf-8"></script>
 <script type="text/javascript" src="/js/banner.js"></script>
 <script>
-    function showLoginBlock() {
-        if (isLogin) {
-            $("#login-block").css("display", "none");
-        }
-    }
+    $.ajax({
+        type: "POST",
+        url: '<%=request.getContextPath()%>/userAction/getUserInfo',
+        dataType: 'json',
+        data: {},
+        cache: false,
+        success: function (result) {
+            // 注册成功
+            if (result.code === 0) {
+                $("#login-block").css("display","none");
+            } else {
 
-    showLoginBlock();
+            }
+        },
+    });
 
     function loginSubmit() {
         if (!checkLogin()) {
