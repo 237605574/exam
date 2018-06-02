@@ -87,7 +87,7 @@
                     </div>
                     <div class="am-u-md-9">
                         <div class="topbar-right am-text-right am-fr">
-                            <a id="user_pos1" href="<%=request.getContextPath()%>/gaokao/login">登录</a>
+                            <a id="user_pos1" href="<%=request.getContextPath()%>/gaokao/home">登录</a>
                             <a id="user_pos2" href="<%=request.getContextPath()%>/gaokao/register">注册</a>
                             <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#pay">充值</button>
 
@@ -151,7 +151,7 @@
         <div class="nav-contain">
             <div class="nav-inner">
                 <ul class="am-nav am-nav-pills am-nav-justify" style="line-height:0.5">
-                    <li class=""><a href="#">首页</a></li>
+                    <li class=""><a href="<%=request.getContextPath()%>/gaokao/home">首页</a></li>
                     <li class=""><a href="#">公司介绍</a></li>
                     <li>
                         <a href="#">高考服务</a>
@@ -188,7 +188,7 @@
                     <div class="am-offcanvas">
                         <div class="am-offcanvas-bar">
                             <ul class="am-menu-nav am-avg-sm-1">
-                                <li><a href="#" class="">首页</a></li>
+                                <li><a href="<%=request.getContextPath()%>/gaokao/home" class="">首页</a></li>
                                 <li><a href="#" class="">公司介绍</a></li>
                                 <li class="am-parent">
                                     <a href="#" class="">高考服务</a>

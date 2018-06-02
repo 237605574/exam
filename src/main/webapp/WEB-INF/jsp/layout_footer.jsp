@@ -8,7 +8,7 @@
             <div class="container">
                 <div class="footer_main">
                     <div class="am-g">
-                        <div class="am-u-md-9 ">
+                        <div class="am-u-md-3 ">
                             <div class="footer_main--column">
                                 <strong class="footer_main--column_title">关于我们</strong>
                                 <div class="footer_about">
@@ -22,8 +22,6 @@
                             </div>
                         </div>
 
-
-
                         <div class="am-u-md-3 ">
                             <div class="footer_main--column">
                                 <strong class="footer_main--column_title">联系详情</strong>
@@ -35,7 +33,24 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="am-u-md-6 ">
+                            <div class="footer_main--column">
+                                <div class="am-u-md-6 ">
+                                    <p class="footer_about--text">
+                                        微信公众号
+                                    </p>
+                                    <img src="/images/二维码.jpg" alt="" style="width: 200px"></div>
+                                <div class="am-u-md-6 ">
+                                    <p class="footer_about--text">
+                                        手机APP
+                                    </p>
+                                    <img src="/images/二维码.jpg" alt="" style="width: 200px"></div>
+                                <%--<strong class="footer_main--column_title">营业执照</strong>--%>
+                                <%--<img src="/images/license.jpg" alt="" style="width: 250px">--%>
+                            </div>
+                        </div>
                     </div>
+                    <div style="width: 100%;color:#fff;text-align: center;margin-top: 20px">Copyright©2008-2018哲哲科技   |   沪ICP备000000000号</div>
                 </div>
             </div>
         </div>
