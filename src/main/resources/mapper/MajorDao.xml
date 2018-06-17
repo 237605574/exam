@@ -27,7 +27,7 @@
         SELECT
         major_info.*
         FROM
-        `major_info` , `school_info`
+        `major_info`
         WHERE
         #{queryObj.studentType} = `student_type` AND
         #{queryObj.province} = `province` AND
@@ -56,7 +56,6 @@
         <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
             #{queryObj.schoolProvince} = `school_address` AND
         </if>
-        major_info.school_id = school_info.school_id AND
         1=1
         ORDER BY major_info.school_rank ASC , major_info.school_id ASC
         -- 一页30个数据
@@ -66,7 +65,7 @@
         SELECT
         major_info.*
         FROM
-        `major_info`,`school_info`
+        `major_info`
         WHERE
         #{queryObj.studentType} = `student_type` AND
         #{queryObj.province} = `province` AND
@@ -95,7 +94,7 @@
         <if test="queryObj.schoolProvince !=null and queryObj.schoolProvince !='' and queryObj.schoolProvince !='全部'">
             #{queryObj.schoolProvince} = `school_address` AND
         </if>
-        major_info.school_id = school_info.school_id
+        1 = 1
         ORDER BY major_info.school_rank ASC ,major_info.school_id ASC
         -- 一页30个数据
         LIMIT #{queryObj.offset},5;

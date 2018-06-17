@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/amazeui.css"/>
     <link rel="stylesheet" href="/css/other.min.css"/>
     <link rel="stylesheet" href="/css/home.css"/>
-    <link href="/css/global.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
 <jsp:include page="layout_header.jsp"></jsp:include>
@@ -34,15 +34,10 @@
             </div>
         </li>
     </ul>
-    <div class="Homeleft"><</div>
-    <div class="Homeright">></div>
-    <div class="Homedot"><a href="javascript:;" class="cur">1</a><a href="javascript:;">2</a><a
-            href="javascript:;">3</a></div>
-</div>
-<div class="login-block" id="login-block">
-    <div class="demo form-bg">
-        <div class="container">
-            <div class="col-md-offset-3 col-md-6">
+    <div class="login-block" id="login-block">
+        <div class="demo form-bg">
+            <div class="container" style="max-width: 600px">
+                <%--<div class="col-md-offset-3">--%>
                 <form class="form-horizontal">
                     <img class="logo-pic" src="/images/logo2_03.png" alt=""/>
                     <div class="form-group">
@@ -61,10 +56,16 @@
                     </div>
                 </form>
 
+                <%--</div>--%>
             </div>
         </div>
     </div>
+    <div class="Homeleft"><</div>
+    <div class="Homeright">></div>
+    <div class="Homedot"><a href="javascript:;" class="cur">1</a><a href="javascript:;">2</a><a
+            href="javascript:;">3</a></div>
 </div>
+
 <div class="section">
     <div class="container">
         <div class="section--header">
@@ -237,6 +238,8 @@
         }, function () {
             $(this).find("div").stop(true).animate({top: -0}, 300);
         });
+
+
 
     });
 

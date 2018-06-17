@@ -351,11 +351,11 @@
                                             </div>
                                         </div>
                                         <div class="am-form-group">
-                                            <label for="major_majorProvince" class="am-u-sm-3 am-form-label">
+                                            <label for="major_schoolProvince" class="am-u-sm-3 am-form-label">
                                                 学校省份
                                             </label>
                                             <div class="am-u-sm-9">
-                                                <select id="major_majorProvince" data-am-selected="{searchBox: 1}"
+                                                <select id="major_schoolProvince" data-am-selected="{searchBox: 1}"
                                                         style="display: none;height:250px; overflow-y: scroll">
                                                     <option value="全部">全部</option>
                                                     <option value="安徽">安徽</option>

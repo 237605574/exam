@@ -17,7 +17,7 @@
         `user_name` = #{userName};
     </select>
     <insert id="insert">
-        INSERT INTO
+        INSERT ignore INTO
         `user`
         (`user_name`,`password`)
         VALUES (#{name},#{password})
